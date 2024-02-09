@@ -5,7 +5,6 @@ function NavBar(){
         <>
         <nav>
             <Link to="/">Home</Link>
-            <Link t0="/project">Project</Link>
         </nav>
         <Outlet/>
         </>

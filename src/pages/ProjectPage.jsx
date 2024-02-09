@@ -5,6 +5,8 @@ function ProjectPage(){
     const { id } = useParams();
     const { project, isLoading, error } = userProject(id);
 
+    console.log("Project Data:", project);
+
     if (isLoading){
         return (<p> loading ...</p>)
     }

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import getProject from "../api/get-project";
 
-export default function useProject(projectID) {
+export default function useProject(projectId) {
     const [project, setProject] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState();
 
     useEffect(() => {
-        getProject(projectID)
+        getProject(projectId)
             .then((project) => {
                 setProject(project);
                 setIsLoading(false);
@@ -16,6 +16,6 @@ export default function useProject(projectID) {
                 setError(error);
                 setIsLoading(false);
             });
-    }, [projectID]);
+    }, [projectId]);
      return {project, isLoading, error};
 }

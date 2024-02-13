@@ -19,11 +19,11 @@ function ProjectPage(){
     return (
         <>
         <h2>{project.title}</h2>
-        <h3>Created at: {project.date_created}</h3>
-        <h3>{`Status: ${project.is_open}` }</h3>
+        <h3>Created at: {project.project.date_created}</h3>
+        <h3>{`Status: ${project.project.is_open}` }</h3>
         <h3>Pledges:</h3>
         <ul>
-            {project.pledges && project.pledges.map((pledgeData, key) =>{
+            {project.project.pledges && project.project.pledges.map((pledgeData, key) =>{
                 return (
                     <li key={key}>
                         {pledgeData.amount} from {pledgeData.supporter}

@@ -1,0 +1,39 @@
+@import "src/vars.css";
+
+.navbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    background-color: var(--black);
+}
+
+.menu{
+    display: flex;
+}
+
+.menuItems{
+    display: flex;
+    gap: 47px;
+    list-style: none;
+}
+
+ .link{
+    font-size: 20px;
+    font-family: var(--heading);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.link:hover{
+    color: var(--orange);
+}
+
+.logo{
+    height: 50px;
+    margin-left: 20px;
+}
+

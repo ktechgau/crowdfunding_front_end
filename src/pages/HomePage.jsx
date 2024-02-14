@@ -13,3 +13,5 @@ function HomePage(){
     );
 }
 export default HomePage;
+
+//eventualy change this home page to have just featured projects, not all

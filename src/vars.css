@@ -1,0 +1,10 @@
+:root {
+    /* colours */
+    --white: #ffffff;
+    --black: #000000;
+    --orange: #FF8300;
+
+    /* fonts */
+    --heading: "Roboto";
+    --text: "Raleway"
+}

@@ -1,6 +1,21 @@
-#project-list{
+/*#project-list{
     display: grid;
     grid-template-columns: 30% 30% 30%;
     column-gap: 10px;
     row-gap: 10px;
+}*/
+
+.hero{
+   position: relative;
+   overflow: hidden; /*ensures the vid stays within the boundaries*/
+}
+
+.heroImg{
+    width: 100%;
+    height: auto;
+}
+.heroVid{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
 }

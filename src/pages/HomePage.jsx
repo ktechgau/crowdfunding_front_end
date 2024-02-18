@@ -1,16 +1,27 @@
-import useProjects from "../hooks/use-projects";
-import ProjectCard from "../components/ProjectCard";
+
 import "../components/HomePage.css";
 
 function HomePage(){
-        return (
+        return (  
         <section className="hero">
+            <div className="search">
+            <p>Enter search function here</p>
+            </div>
+            <div className="overlay">
+            <div className="overlayContainer">
+            <p className="overlayText">
+                <span className="italic" id="line1">Invest</span> in 
+            </p>
+                <p className="overlayText" id="line2">Knowledge</p>
+                <p className="overlayText" id="line3"><span className="italic">Transform</span></p>
+                <p className="overlayText" id="line4">Lives</p>
+            </div>
+            </div>
             <div className="heroImg">
-                <video autoPlay loop controls className="heroVid">
+                <video autoPlay loop className="heroVid">
                 <source type="video/mp4" 
-                src="src/assets/Hero/hero.mp4"/>
-                </video>
-            
+                src="src/assets/Hero/hero2.mp4"/>
+                </video>   
             </div>
         </section>
         )  
@@ -27,4 +38,4 @@ function HomePage(){
 
 export default HomePage;
 
-//eventualy change this home page to have just featured projects, not all
+//eventualy change this home page to have just featured projects, not all8

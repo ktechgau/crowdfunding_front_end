@@ -1,0 +1,9 @@
+.projectHero{
+    position: relative;
+   overflow: hidden;
+}
+
+.lightImg{
+    width: 100%;
+    height: auto;
+}

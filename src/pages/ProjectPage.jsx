@@ -20,6 +20,7 @@ function ProjectPage(){
     return (
         <>
         <h2>{projectDetails.project.title}</h2>
+        <p>{projectDetails.project.category}</p>
         <h3>Created at: {projectDetails.project.date_created}</h3>
         <h3>{`Status: ${projectDetails.project.is_open}` }</h3>
         <h3>Pledges:</h3>

@@ -1,9 +1,78 @@
-.projectHero{
+.hero2{
     position: relative;
-   overflow: hidden;
+    overflow: hidden; 
+   
+}
+
+.projectHero{
+    width: 100%;
+    height: auto;
 }
 
 .lightImg{
+    object-fit: cover;
     width: 100%;
     height: auto;
+}
+
+.overlayContainer2{
+    margin: 100% 0;
+}
+
+.overlay2{
+        position: absolute; 
+        bottom:0;
+        padding:30px;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); /* Black see-through */
+        color: var(--white); 
+        width: 100%;
+        height:87%;
+        transition: .5s ease;
+        opacity:1;
+        color: var(--ivory);
+        text-align: center; 
+                     
+}
+
+.overlayText2{
+    line-height: 1.25;
+    color: var(--white);
+    font-family: var(--heading);
+    font-weight:lighter;
+    font-size: 2.5rem;
+    z-index: 1;    
+}
+
+.italic{
+    font-style:italic;
+}
+
+#line1{
+    margin-left: 15%;
+    font-size: 3.5rem;
+}
+
+#line2{
+    margin-left: 35%;  
+}
+
+#line3{
+    margin-left:15% ;
+    font-size:3.5rem ;
+}
+
+#line4{
+    margin-left: 40%;
+}
+
+.form{
+    background-color: var(--white);
+}
+
+h1{
+    padding: 100px 20px;
+    text-align: center;
+    font-family: var(--heading);
+    text-transform: uppercase;
 }

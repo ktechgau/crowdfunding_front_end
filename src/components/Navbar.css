@@ -7,6 +7,7 @@
     align-items: center;
     flex-wrap:wrap;
     background-color: var(--black);
+
 }
 
 .menu{
@@ -44,9 +45,12 @@
 
 @media screen and (max-width:830px){
     .navbar{
+        position: relative;
         flex-direction: column;
         align-items: flex-start;
+        
     }
+
     .menu{
         position: absolute;
         right: 0;
@@ -54,6 +58,7 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 11px;
+       
     }
     .burger{
         display: block;

@@ -16,15 +16,23 @@ function NewProjectPage(){
                     <p className="overlayText2" id="line2">Help</p>
                     <p className="overlayText2" id="line3"><span className="italic">Reach</span></p>
                     <p className="overlayText2" id="line4">Your Goal</p>
+                    <p className="overlayText">
+                        <a href="#form">
+                        <img className="arrow" src="src/assets/Hero/arrow.png"/>
+                        </a>
+                    </p>
+                        
                 </div>
             </div>
             <div className="projectHero">
                 <img className="lightImg" src="src/assets/Images/light.png" alt="image of a lightbulb with a graduation hat on it" />
             </div>
         </section>
-        <section className="form">
+        <section className="form" >
             <h1>Turn dreams into reality</h1>
-            <NewProjectForm />
+            <div id="form">
+                <NewProjectForm />
+            </div>
         </section>
         </>  
     )

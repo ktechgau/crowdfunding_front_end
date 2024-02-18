@@ -9,12 +9,15 @@ function HomePage(){
             </div>
             <div className="overlay">
             <div className="overlayContainer">
+            
             <p className="overlayText">
                 <span className="italic" id="line1">Invest</span> in 
             </p>
                 <p className="overlayText" id="line2">Knowledge</p>
                 <p className="overlayText" id="line3"><span className="italic">Transform</span></p>
                 <p className="overlayText" id="line4">Lives</p>
+                <p className="overlayText">
+                <img className="arrow" src="src/assets/Hero/arrow.png"/></p>
             </div>
             </div>
             <div className="heroImg">

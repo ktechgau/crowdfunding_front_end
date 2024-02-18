@@ -6,9 +6,10 @@ function NewProjectForm (){
     const [projectData, setProjectData] = useState ({
         title: '',
         description:'',
-        goal: '',
+        goal: null,
         image: '',
-        date_created: '',
+        is_open: true,
+        date_created: null,
         //category: ([]), //initialise a new array?
     });
     
@@ -24,6 +25,7 @@ function NewProjectForm (){
     //handles the form submission
     const handleSubmit = (event) =>{
         event.preventDefault();
+        if (projectData.title && projectData.goal) {
         postProject(
             projectData.title,
             projectData.description,
@@ -35,6 +37,7 @@ function NewProjectForm (){
         .then((response) => {
             console.log(response);
         });
+    }
     }
 
      return(
@@ -52,7 +55,14 @@ function NewProjectForm (){
             <input type="url" 
             id="img" 
             placeholder="Upload your image here"
-            pattern="https://.*"
+            onChange={handleChange}
+            />
+        </div>
+        <div>
+            <label htmlFor="isOpen">Asking for donations: </label>
+            <input type="checkbox" 
+            id="isOpen" 
+            checked={projectData.is_open}
             onChange={handleChange}
             />
         </div>
@@ -73,6 +83,13 @@ function NewProjectForm (){
             id="description"  
             onChange={handleChange}
             />   
+        </div>
+        <div>
+            <label htmlFor="dateCreated">Date Created:</label>
+            <input type="date"
+            id="dateCreated" 
+            onChange={handleChange}
+            />
         </div>
         {/* <div>
             <label htmlFor="category">Select a category for your area of study</label>

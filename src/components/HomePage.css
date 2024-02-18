@@ -22,7 +22,7 @@
 .search{
     color: var(--white);
     border: 0.5px solid white;
-    margin: 60px 20px 30px 20px;
+    margin: 90px 20px 30px 20px;
     z-index:0;
 }
 

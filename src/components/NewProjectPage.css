@@ -1,3 +1,5 @@
+@import '../vars.css';
+
 .hero2{
     position: relative;
     overflow: hidden; 
@@ -67,12 +69,37 @@
 }
 
 .form{
-    background-color: var(--white);
+    background-color: var(--grey);
 }
 
 h1{
-    padding: 100px 20px;
+    padding-top: 80px;
     text-align: center;
     font-family: var(--heading);
     text-transform: uppercase;
+}
+
+h3{
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.sub-head{
+    font-family: var(--text);
+    font-weight: normal;
+    font-size:larger;
+    padding: 20px 20px;
+}
+
+.newProjectForm{
+    background-color: var(--white);
+    border-radius: 15px;
+    margin: 30px auto;
+   width: 80%;
+    padding: 30px;
+}
+
+.orange{
+    color: var(--orange);
 }

@@ -46,6 +46,20 @@ function HomePage(){
                 </div>
                 <RandomProjectImg/>
             </section>
+
+            <section className="howItWorks">
+                <p className="overlayText"><span className="italic" id="line1">How</span> it works</p>
+                <div className="blurb">
+                    <p className="text">Our platform enables individuals to fund their educational endeavors through personalized crowdfunding campaigns. </p>
+                    <p className="text">Users share their goals, receive pledges from supporters, and access funds once their targets are met.</p>
+                    <p className="text">It's a community-driven solution for achieving educational aspirations.</p>
+                </div>
+            </section>
+
+            <section className="cta-button" id="cta-button">
+            <Link className= "link" to="/ask">Help Someone</Link>
+            </section>
+
         <Outlet/>
         <ScrollToAnchor/>
         </>

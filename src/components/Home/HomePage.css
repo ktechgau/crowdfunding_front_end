@@ -1,11 +1,5 @@
 @import '../vars.css';
 
-/*#project-list{
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 10px;
-    row-gap: 10px;
-}*/
 
 .hero{
    position: relative;
@@ -30,6 +24,7 @@
 
 .overlayContainer{
     margin: 100% 0;
+    
 }
 
 .overlay{
@@ -37,10 +32,10 @@
         bottom:0;
         padding:30px;
         background: rgb(0, 0, 0);
-        background: rgba(0, 0, 0, 0.5); /* Black see-through */
+        background: rgba(0, 0, 0, 0.5); 
         color: var(--white); 
         width: 100%;
-        height:87%;
+        height:100%;
         transition: .5s ease;
         opacity:1;
         color: var(--ivory);
@@ -82,4 +77,44 @@
 
 #line4{
     margin-left: 45%;
+}
+
+.cta-button{
+    padding: 10px;
+    text-align: center;
+    margin: 50px 30px;;
+    border: solid 1px var(--orange);
+    border-radius: 15px;
+}
+
+/*Featured Projects section*/
+
+.features{
+    background: var(--blue);
+   position:relative;
+   overflow: hidden; 
+}
+
+.featureProjects{
+    margin: 30px auto;
+    width: auto;
+    height:auto;
+    padding: 30px;
+}
+
+.headingText{
+    line-height: 1.25;
+    color: var(--black);
+    font-family: var(--heading);
+    font-weight:lighter;
+    font-size: 2.5rem;
+    z-index: 1;
+}
+
+#headingline1{
+    margin-left: 20px;
+}
+
+#headingline2{
+    margin-left:90px;
 }

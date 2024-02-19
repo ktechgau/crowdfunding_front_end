@@ -1,5 +1,6 @@
-import NewProjectForm from "../components/NewProjectForm.jsx";
-import "../components/NewProjectPage.css"
+import NewProjectForm from "../components/Projects/NewProjectForm.jsx";
+import "../components/Projects/NewProjectPage.css"
+
 
 function NewProjectPage(){
     return (

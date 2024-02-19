@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
-import useProject from "../hooks/use-project";
-
+import useProject from "../hooks/use-project.js";
+import '../components/Projects/Projectpage.css';
 
 function ProjectPage(){
     const { id } = useParams();
-    const { projectDetails, isLoading, error } = useProject(id);
+    const { projectData, isLoading, error } = useProject(id);
 
-    console.log("Project Data:", projectDetails);
+    console.log("Project Data:", projectData);
 
     if (isLoading){
         return (<p> loading ...</p>)
@@ -14,18 +14,19 @@ function ProjectPage(){
     if (error) {
         return (<p>{error.message}</p>)
     }
-    if (!projectDetails){
+    if (!projectData){
         return null; //This is added to check first if project.pledges exists (not null)
     }
     return (
-        <>
-        <h2>{projectDetails.project.title}</h2>
-        <p>{projectDetails.project.category}</p>
-        <h3>Created at: {projectDetails.project.date_created}</h3>
-        <h3>{`Status: ${projectDetails.project.is_open}` }</h3>
+        <div className="projectPage">
+            
+        <h2>{projectData.project.title}</h2>
+        <p>{projectData.project.category}</p>
+        <h3>Created at: {projectData.project.date_created}</h3>
+        <h3>{`Status: ${projectData.project.is_open}` }</h3>
         <h3>Pledges:</h3>
         <ul>
-            {projectDetails.project.pledges && projectDetails.project.pledges.map((pledgeData, key) =>{
+            {projectData.project.pledges && projectData.project.pledges.map((pledgeData, key) =>{
                 return (
                     <li key={key}>
                         {project.pledgeData.amount} from {project.pledgeData.supporter}
@@ -33,7 +34,7 @@ function ProjectPage(){
                 );
              })}
         </ul>
-        </>
+        </div>
     );
 
 }

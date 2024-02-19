@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import postProject from "../api/post-project.js";
+import postProject from "../../api/post-project.js";
 
 function NewProjectForm (){
     const [projectData, setProjectData] = useState ({

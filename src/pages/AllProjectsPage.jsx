@@ -1,8 +1,8 @@
 import useProjects from "../hooks/use-projects";
-import ProjectCard from "../components/ProjectCard.jsx";
-//import "../components/HomePage.css";
+import ProjectCard from "../components/Projects/ProjectCard.jsx";
 
-function HomePage(){
+
+function AllProjectsPage(){
     const { projects } = useProjects();
     return (
         <div id="project-list">
@@ -12,4 +12,4 @@ function HomePage(){
         </div>
     );
 }
-export default HomePage;
+export default AllProjectsPage;

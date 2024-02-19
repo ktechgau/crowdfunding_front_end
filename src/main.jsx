@@ -5,7 +5,7 @@ import "./components/index.css";
 
 import HomePage from './pages/HomePage.jsx';
 import ProjectPage from './pages/ProjectPage.jsx';
-import NavBar from './components/NavBar.jsx';
+import NavBar from './components/Nav/NavBar.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import HowPage from './pages/HowPage.jsx';
 import AllProjectsPage from './pages/AllProjectsPage.jsx';

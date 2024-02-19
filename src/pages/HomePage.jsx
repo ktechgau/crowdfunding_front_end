@@ -1,12 +1,17 @@
+import {Link, Outlet} from "react-router-dom";
+import "../components/Home/HomePage.css";
+import ScrollToAnchor from "../components/ScrollToAnchor";
+import RandomProjectImg from "../components/Projects/RandomProjectSort";
 
-import "../components/HomePage.css";
+
 
 function HomePage(){
         return (  
-        <section className="hero">
-            <div className="search">
+            <>
+            <section className="search">
             <p>Enter search function here</p>
-            </div>
+            </section>
+            <section className="hero">
             <div className="overlay">
             <div className="overlayContainer">
             
@@ -17,7 +22,10 @@ function HomePage(){
                 <p className="overlayText" id="line3"><span className="italic">Transform</span></p>
                 <p className="overlayText" id="line4">Lives</p>
                 <p className="overlayText">
-                <img className="arrow" src="src/assets/Hero/arrow.png"/></p>
+                    <Link to="cta-button">
+                        <img className="arrow" src="src/assets/Hero/arrow.png"/>
+                    </Link>
+                </p>
             </div>
             </div>
             <div className="heroImg">
@@ -26,19 +34,24 @@ function HomePage(){
                 src="src/assets/Hero/hero2.mp4"/>
                 </video>   
             </div>
-        </section>
+            </section>
+            <section className="cta-button" id="cta-button">
+            <Link className= "link" to="/ask">Ask for Help</Link>
+            </section>
+            
+            <section className="features">
+                <div className="featureProjects">
+                    <p className="headingText"><span className="italic" id="headingline1">Help</span> someone</p>
+                    <p className="headingText"><span className="italic" id="headingline2">Achieve</span> goals</p>   
+                </div>
+                <RandomProjectImg/>
+            </section>
+        <Outlet/>
+        <ScrollToAnchor/>
+        </>
         )  
     };
 
-    /*const { projects } = useProjects();
-    return (
-        <div id="project-list">
-            {projects.map((projectData, key) =>{
-                return <ProjectCard  key={key} projectData={projectData}/>;
-            })}
-        </div>
-    );*/
 
 export default HomePage;
 
-//eventualy change this home page to have just featured projects, not all8

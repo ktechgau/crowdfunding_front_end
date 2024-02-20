@@ -1,10 +1,10 @@
-async function postProject(project) {
+async function deleteProject(project) {
     const url =`${import.meta.env.VITE_API_URL}/projects/`;
     const token=`Token ${window.localStorage.getItem("token")}`;
     
 
     const response =await fetch(url, {
-    method: "POST",
+    method: "DELETE",
     headers: {
         "Content-Type": "application/json",    
        "Authorization": token,
@@ -27,4 +27,4 @@ async function postProject(project) {
     }
     return await response.json();
 }   
-export default postProject;
+export default deleteProject;

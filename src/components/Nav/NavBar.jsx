@@ -1,9 +1,15 @@
 import {Link, Outlet} from "react-router-dom";
 import  "./Navbar.css";
 import React, { useState } from 'react';
+import { useAuth } from "../../hooks/use-auth";
 
 function NavBar(){
     const [menuOpen, setMenuOpen] = useState(false);
+    const {auth, setAuth} = useAuth();
+    const handleLogout = () => {
+        window.localStorage.removeItem("token");
+        setAuth({ token: null });
+    };
 
     return( 
         <>
@@ -33,7 +39,12 @@ function NavBar(){
                     <li><Link className= "link" to="/projects">Help</Link></li>
                     <li><Link className= "link" to="/ask">Ask for Help</Link></li>
                     <li><Link className="link" to="/how">How it Works</Link></li>
-                    <li><Link className="link" to="/login">Sign In</Link></li>
+                        {auth.token ? (
+                            <Link className="link" to="/" onClick={handleLogout}>Log Out</Link>
+                        ) 
+                        : (<Link className="link" to="/login">Login</Link>)}
+
+                    {/*<li><Link className="link" to="/login">Sign In</Link></li>*/}
                 </ul>
             </div>
 

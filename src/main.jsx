@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import "./components/index.css";
+import { AuthProvider } from "./components/AuthProvider.jsx";
 
 import HomePage from './pages/HomePage.jsx';
 import ProjectPage from './pages/ProjectPage.jsx';
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* here we wrap our app in the router provider so they render */}
-    <RouterProvider router={router}/>
+    <AuthProvider>
+      <RouterProvider router={router}/>
+    </AuthProvider>
   </React.StrictMode>,
 );

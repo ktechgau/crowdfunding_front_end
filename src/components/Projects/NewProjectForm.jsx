@@ -12,6 +12,8 @@ function NewProjectForm (){
         date_created: null,
         //category: ([]), //initialise a new array?
     });
+
+    
     
     //handles the changes in the form
     const handleChange = (event) => {
@@ -27,12 +29,7 @@ function NewProjectForm (){
         event.preventDefault();
         if (projectData.title && projectData.goal) {
         postProject(
-            projectData.title,
-            projectData.description,
-            projectData.goal,
-            projectData.image,
-            projectData.date_created,
-            //projectData.category
+            {...projectData}
         )
         .then((response) => {
             console.log(response);
@@ -51,17 +48,17 @@ function NewProjectForm (){
             />
         </div>
         <div>
-            <label htmlFor="img">Enter your image URL: </label>
+            <label htmlFor="image">Enter your image URL: </label>
             <input type="url" 
-            id="img" 
+            id="image" 
             placeholder="Upload your image here"
             onChange={handleChange}
             />
         </div>
         <div>
-            <label htmlFor="isOpen">Asking for donations: </label>
+            <label htmlFor="is_open">Asking for donations: </label>
             <input type="checkbox" 
-            id="isOpen" 
+            id="is_open" 
             checked={projectData.is_open}
             onChange={handleChange}
             />
@@ -85,9 +82,9 @@ function NewProjectForm (){
             />   
         </div>
         <div>
-            <label htmlFor="dateCreated">Date Created:</label>
+            <label htmlFor="date_created">Date Created:</label>
             <input type="date"
-            id="dateCreated" 
+            id="date_created" 
             onChange={handleChange}
             />
         </div>

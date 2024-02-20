@@ -11,7 +11,7 @@ async function getProject(projectId) {
         throw new Error(errorMessage);
     }
     const projectData = await response.json();
-    console.log("Project Data:", projectData); // Log the project data
+  
     return projectData;
     //return await response.json();
 }

@@ -12,7 +12,7 @@ async function getTotalUsers() {
     }
     const usersData = await response.json();
     const totalUsers= usersData.length;
-    console.log("Total Users", totalUsers); 
+   
     return totalUsers;
    
 }

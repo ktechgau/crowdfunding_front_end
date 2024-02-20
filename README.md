@@ -15,3 +15,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://stackoverflow.com/questions/67243653/how-can-i-have-an-image-that-changes-every-5-seconds-in-react-js
 
 https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+
+https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object#:~:text=It%20can%20be%20as%20simple,%3E%20a%20%2B%20b%2C%200)%3B
+

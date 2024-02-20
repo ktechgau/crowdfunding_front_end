@@ -6,7 +6,7 @@ function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
 
-    console.log("Project Data:", projectData);
+   
 
     if (isLoading){
         return (<p> loading ...</p>)
@@ -14,9 +14,10 @@ function ProjectPage(){
     if (error) {
         return (<p>{error.message}</p>)
     }
-    if (!projectData){
-        return null; //This is added to check first if project.pledges exists (not null)
+     if (!projectData){
+         return null; //This is added to check first if project.pledges exists (not null)
     }
+   
     return (
         <div className="projectPage">
             
@@ -29,7 +30,7 @@ function ProjectPage(){
             {projectData.project.pledges && projectData.project.pledges.map((pledgeData, key) =>{
                 return (
                     <li key={key}>
-                        {project.pledgeData.amount} from {project.pledgeData.supporter}
+                        {pledgeData.amount} from {pledgeData.supporter}
                     </li>                
                 );
              })}

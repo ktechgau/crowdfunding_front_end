@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import getProject from "../api/get-project";
 
 function useProject(projectId) {
-    const [project, setProject] = useState();
+    const [projectData, setProject] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState();
 
@@ -17,6 +17,7 @@ function useProject(projectId) {
                 setIsLoading(false);
             });
     }, [projectId]);
-     return {project, isLoading, error};
+    
+     return {projectData, isLoading, error};
 }
 export default useProject;

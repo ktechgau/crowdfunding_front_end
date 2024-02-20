@@ -3,13 +3,14 @@ import "../components/Home/HomePage.css";
 import ScrollToAnchor from "../components/ScrollToAnchor";
 import RandomProjectImg from "../components/Projects/RandomProjectSort";
 import useUserTotal from "../hooks/use-user-total";
-
+import usePledgeTotal from "../hooks/use-pledge-total";
 
 
 
 function HomePage(){
     const {totalUsers} = useUserTotal(); //for getting usertotals
-
+    const {totalPledges}= usePledgeTotal();
+    
         return (  
             <>
             <section className="search">
@@ -61,7 +62,7 @@ function HomePage(){
             </section>
 
             <section className="cta-button" id="cta-button">
-            <Link className= "link" to="/ask">Help Someone</Link>
+            <Link className= "link" to="/projects">Help Someone</Link>
             </section>
             
             <section className="counterContainer">
@@ -69,9 +70,10 @@ function HomePage(){
                 <div className="totals">
                     <p id="counterText1"><span className="italic" id="line1">We've helped</span></p>
                     <p id="counterText2">{totalUsers}</p>
-                    <p id="counterText3"><span className="italic" id="line1">people reach </span></p>
-                    <p id="counterText2">-pledge total</p>
-                    <p id="counterText4">towards achieveing their goals!</p>
+                    <p id="counterText3"><span className="italic" id="line1">people raise </span></p>
+                    <p id="counterText2">{totalPledges}</p>
+                    
+                    
                     </div>
                 </div>
             </section>
@@ -79,7 +81,7 @@ function HomePage(){
 
         <Outlet/>
         <ScrollToAnchor/>
-        #
+        
         </>
         )  
     };

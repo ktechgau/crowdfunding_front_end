@@ -14,7 +14,7 @@ function RandomProjectImg(){
     }, 2000)
         return() => clearInterval(intervalID);
     }, [projects])
-    console.log("Current Project:", currentProject);
+    
     return (
        <section>
        {currentProject&&<ProjectCard projectData={currentProject}/>}

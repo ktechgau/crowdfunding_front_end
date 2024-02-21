@@ -18,3 +18,5 @@ https://developer.mozilla.org/en-US/docs/Web/API/setInterval
 
 https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object#:~:text=It%20can%20be%20as%20simple,%3E%20a%20%2B%20b%2C%200)%3B
 
+https://reactrouter.com/en/main/hooks/use-navigate
+

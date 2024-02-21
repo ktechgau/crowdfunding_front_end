@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import postProject from "../../api/post-project.js";
+import ProjectPage from "../../pages/ProjectPage.jsx";
 
 function NewProjectForm (){
+    const navigate = useNavigate();
+
     const [projectData, setProjectData] = useState ({
         title: '',
         description:'',
@@ -33,6 +37,7 @@ function NewProjectForm (){
         )
         .then((response) => {
             console.log(response);
+            navigate(`/project/${response.id}`);
         });
     }
     }

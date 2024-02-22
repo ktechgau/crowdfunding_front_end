@@ -40,16 +40,21 @@ function HomePage(){
                 </video>   
             </div>
             </section>
+
             <section className="cta-button" id="cta-button">
-            <Link className= "link" to="/ask">Ask for Help</Link>
+            <Link className= "link" to="/projects">Help Someone</Link>
             </section>
             
+            
             <section className="features">
+            <p className="headingText"><span className="italic" id="headingline1">Help</span> someone</p>
+                <p className="headingText"><span className="italic" id="headingline2">Achieve</span> goals</p>   
                 <div className="featureProjects">
-                    <p className="headingText"><span className="italic" id="headingline1">Help</span> someone</p>
-                    <p className="headingText"><span className="italic" id="headingline2">Achieve</span> goals</p>   
+                    <div className="random-image">
+                        <RandomProjectImg/>
+                    </div>
+                
                 </div>
-                <RandomProjectImg/>
             </section>
 
             <section className="howItWorks">
@@ -62,8 +67,9 @@ function HomePage(){
             </section>
 
             <section className="cta-button" id="cta-button">
-            <Link className= "link" to="/projects">Help Someone</Link>
+            <Link className= "link" to="/ask">Ask for Help</Link>
             </section>
+
             
             <section className="counterContainer">
                 <div>

@@ -52,3 +52,9 @@
 .single-pledges{
     margin-top: 30px;
 }
+
+.link{
+border:none;
+outline:none;
+background-color: transparent;
+}

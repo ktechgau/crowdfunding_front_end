@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import postProject from "../../api/post-project.js";
-import ProjectPage from "../../pages/ProjectPage.jsx";
+
 
 function NewProjectForm (){
     const navigate = useNavigate();

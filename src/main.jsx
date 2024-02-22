@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import HowPage from './pages/HowPage.jsx';
 import AllProjectsPage from './pages/AllProjectsPage.jsx';
 import NewProjectPage from './pages/NewProjectPage.jsx';
+import PledgePage from './pages/PledgePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   children: [
     {path:"/", element:<HomePage/>},
     {path:"/projects", element:<AllProjectsPage/>},
+    {path:"/project/:id/pledge", element:<PledgePage/>},
     {path:"/ask", element:<NewProjectPage/>},
     {path:"/how", element:<HowPage/>},
     {path:"/login", element: <LoginPage />},

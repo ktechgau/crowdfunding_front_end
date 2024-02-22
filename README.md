@@ -20,3 +20,5 @@ https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascri
 
 https://reactrouter.com/en/main/hooks/use-navigate
 
+https://dev.to/thatfemicode/passing-data-states-through-react-router-8dh
+

@@ -1,14 +1,14 @@
-import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
+import { useParams, useNavigate } from "react-router-dom"; //useParams is a hook from react router dom
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import {Link} from "react-router-dom";
 
+
 function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
-
+    const navigate = useNavigate();
    
-
     if (isLoading){
         return (<p> loading ...</p>)
     }
@@ -31,14 +31,20 @@ function ProjectPage(){
                 <p className="text-category">{`Status: ${projectData.project.is_open}` }</p>
             
             <section className="cta-button" id="cta-button">
-                <Link className= "link" to="/ask">Support now</Link>
+                <button className= "link" 
+                onClick={() => navigate(`/project/${id}/pledge`, 
+                { state: { project: projectData } })}>
+                Support now</button>
             </section>
 
             <section className="blurb">
                 <p className="text"> {projectData.project.description}</p>
-                <div className="cta-button" id="cta-button">
-                    <Link className= "link" to="/ask">Support</Link>
-                </div>
+                <section className="cta-button" id="cta-button">
+                <button className= "link" 
+                onClick={() => navigate(`/project/${id}/pledge`, 
+                { state: { project: projectData } })}>
+                Support now</button>
+            </section>
 
                 <div className="pledges-project">
                 <p className="overlayText-project"><span className="italic" id="line1-project">Pledges</span></p>

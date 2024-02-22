@@ -6,7 +6,7 @@ import postPledge from "../../api/post-pledge.js";
 
 function PledgeForm (projectId){
     const navigate = useNavigate();
-    const location = useLocation();
+    
 
     const [pledgeData, setPledgeData] = useState ({
         amount: null,

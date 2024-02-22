@@ -8,7 +8,7 @@ function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
 
-    console.log("Project ID:", projectData.project.id);
+    
 
     if (isLoading){
         return (<p> loading ...</p>)

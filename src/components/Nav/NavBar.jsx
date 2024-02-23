@@ -38,7 +38,6 @@ function NavBar(){
                     <li><Link className= "link" to="/">Home</Link></li>
                     <li><Link className= "link" to="/projects">Help</Link></li>
                     <li><Link className= "link" to="/ask">Ask for Help</Link></li>
-                    <li><Link className="link" to="/how">How it Works</Link></li>
                         {auth.token ? (
                             <Link className="link" to="/" onClick={handleLogout}>Log Out</Link>
                         ) 

@@ -24,6 +24,11 @@
    color: var(--white);
 }
 
+.divide{
+    border-top: 1px var(--black) solid;
+    margin-top: 20px;
+}
+
 .overlayText-project{
     text-align: center;
     color: var(--white);
@@ -36,21 +41,37 @@
 }
 
 .text-category{
-    font-family: var(--text);
-    font-size: 1.25rem;
+    font-family: var(--heading);
+    font-size: 1.5rem;
     text-align: center;
+    font-style: italic;
     margin-top: 10px;
+    margin-bottom:20px;
+    /*color: var(--black);*/
 }
 
 .pledges-project{
     padding: 50px;
-    background: var(--green);
+    background: var(--blue);
     color: var(--white);
     border-radius: 15px;
 }
 
 .single-pledges{
     margin-top: 30px;
+    padding:0;
+    display: block;
+    
+}
+
+.text-pledge{
+    font-family: var(--text);
+    font-size: 1.25rem;;
+}
+
+.list-pledges{
+    margin-top: 30px;
+   
 }
 
 .link{

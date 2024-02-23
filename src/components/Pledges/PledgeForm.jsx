@@ -4,14 +4,17 @@ import { useNavigate } from "react-router-dom";
 import postPledge from "../../api/post-pledge.js";
 
 
-function PledgeForm (){
+function PledgeForm ({projectId}){
     const navigate = useNavigate();
+    console.log(projectId);
     
 
     const [pledgeData, setPledgeData] = useState ({
         amount: null,
         comment: " ",
         anonymous: false,
+        project: projectId,
+        
     });
 
     
@@ -27,16 +30,14 @@ function PledgeForm (){
     //handles the form submission
     const handleSubmit = (event) =>{
         event.preventDefault();
-        if (pledgeData.projectId && pledgeData.amount) {
+        if (projectId && pledgeData.amount) {
         postPledge(
-            pledgeData.amount, 
-            pledgeData.comment,
-            pledgeData.anonymous,
-            pledgeData.projectId,
+            pledgeData,
+            
         )
         .then((response) => {
             console.log(response);
-            navigate(`/pledges/${response.id}`);
+            navigate(`/project/${projectId}`);
         });
     }
     }

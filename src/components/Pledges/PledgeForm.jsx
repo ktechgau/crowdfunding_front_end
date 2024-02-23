@@ -42,6 +42,7 @@ function PledgeForm (){
     }
      return(
     <form>
+        <section className="form-container">
         <div>
             <label htmlFor="amount">Enter a dollar amount: </label>
             <input id="amount"
@@ -74,10 +75,14 @@ function PledgeForm (){
             <option key={category} value={category}>{category}</option>
             </select>
         </div> */}
-       <button type="submit" onClick={handleSubmit}>
-        Pledge</button>
-
+       
+        </section>
+        <section className="cta-button" id="cta-button">
+    <button className="link" type="submit" onClick={handleSubmit}>
+    Make a Pledge</button>
+    </section>
     </form>
+    
     );
 }
 export default PledgeForm;

@@ -30,15 +30,11 @@ function ProjectPage(){
             <p className="text-category">You are supporting</p>
                 <p className="overlayText-project"><span className="italic" id="line1-project">{projectData.project.title}</span></p>
 
-            <section className="pledge-form">
-          
-                <PledgeForm projectId={projectData.project.id}/>
-            </section>
-
-            <section className="cta-button" id="cta-button">
-                <Link className= "link" to="/pledge">Insert "Pledge" button</Link>
+            <section className="newProjectForm">
+                <PledgeForm/>
             </section>
             </section>
+            
         </div>
     );
 

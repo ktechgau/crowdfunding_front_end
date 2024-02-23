@@ -12,7 +12,6 @@ function PledgeForm (projectId){
         amount: null,
         comment: " ",
         anonymous: false,
-        project: projectId
     });
 
     

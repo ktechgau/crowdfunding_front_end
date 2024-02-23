@@ -1,0 +1,37 @@
+@import '../vars.css';
+
+input, textarea{
+    font-family: var(--heading);
+    font-size: 1rem;
+    border:none;
+    display: block;
+    width: 100%;
+    margin-top:.8rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    display: flex;
+    align-items: baseline;
+    border-radius:5px;
+}
+
+label{
+    font-size: 1.5rem;
+    display:flex;
+    align-items: baseline;
+}
+
+input:focus,
+textarea:focus
+{
+background-color: var(--grey);
+outline-style: solid;
+outline-width: medium;
+outline-color: var(--black);
+}
+
+.form-container{
+    padding: 30px;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 15px;
+}

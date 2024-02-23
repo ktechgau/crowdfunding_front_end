@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "../Projects/NewProjectForm.css";
 import postProject from "../../api/post-project.js";
 
 
@@ -44,16 +44,17 @@ function NewProjectForm (){
 
      return(
     <form>
+        <section className="form-container">
         <div>
-            <label htmlFor="title">Title: </label>
+            <label htmlFor="title">Title </label>
             <input id="title"
             type="text"  
-            placeholder="What is your name?"
+            placeholder="Heading for your page"
             onChange={handleChange}
             />
         </div>
         <div>
-            <label htmlFor="image">Enter your image URL: </label>
+            <label htmlFor="image">Enter your image URL </label>
             <input type="url" 
             id="image" 
             placeholder="Upload your image here"
@@ -61,7 +62,7 @@ function NewProjectForm (){
             />
         </div>
         <div>
-            <label htmlFor="is_open">Asking for donations: </label>
+            <label htmlFor="is_open">Currently asking for donations? </label>
             <input type="checkbox" 
             id="is_open" 
             checked={projectData.is_open}
@@ -77,7 +78,7 @@ function NewProjectForm (){
             />
         </div>
         <div>
-            <label htmlFor="description">Tell us about yourself and your study aspirations:
+            <label htmlFor="description">Tell us about yourself and your study aspirations
             </label>
             <textarea rows={15} cols={50}
             input="text"
@@ -87,7 +88,7 @@ function NewProjectForm (){
             />   
         </div>
         <div>
-            <label htmlFor="date_created">Date Created:</label>
+            <label htmlFor="date_created">Date Created</label>
             <input type="date"
             id="date_created" 
             onChange={handleChange}
@@ -100,10 +101,17 @@ function NewProjectForm (){
             <option key={category} value={category}>{category}</option>
             </select>
         </div> */}
-       <button type="submit" onClick={handleSubmit}>
-        Create an OpenDoor Page</button>
+       
+    </section>
+
+    <section className="cta-button" id="cta-button">
+    <button className="link" type="submit" onClick={handleSubmit}>
+    Create a Page</button>
+    </section>
 
     </form>
+
+    
     );
 }
 export default NewProjectForm;

@@ -34,10 +34,10 @@ function HomePage(){
             </div>
             </div>
             <div className="heroImg">
-                <video autoPlay loop className="heroVid">
-                <source type="video/mp4" 
-                src={hero2}/>
-                </video>   
+                <video src={hero2} autoPlay loop className="heroVid"/>
+        
+                
+                
             </div>
             </section>
 

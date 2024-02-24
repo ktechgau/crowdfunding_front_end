@@ -28,7 +28,7 @@ function HomePage(){
                 <p className="overlayText" id="line4">Lives</p>
                 <p className="overlayText">
                     <Link to="cta-button">
-                        <img className="arrow" src="src/assets/Hero/arrow.png"/>
+                        <img className="arrow" src="assets/Hero/arrow.png"/>
                     </Link>
                 </p>
             </div>
@@ -36,7 +36,7 @@ function HomePage(){
             <div className="heroImg">
                 <video autoPlay loop className="heroVid">
                 <source type="video/mp4" 
-                src="src/assets/Hero/hero2.mp4"/>
+                src="assets/Hero/hero2.mp4"/>
                 </video>   
             </div>
             </section>

@@ -17,7 +17,7 @@ function NavBar(){
 
             <Link to="/">
             <img className="logo" 
-            src="src/assets/Nav/logo.png" 
+            src="assets/Nav/logo.png" 
             alt="OpenDoor's logo leading to homepage"/>
             </Link> 
 
@@ -26,8 +26,8 @@ function NavBar(){
                 <img className="burger"
                 src={
                     menuOpen
-                    ?("src/assets/Nav/x-close.png")
-                    :("src/assets/Nav/hamburger.png")
+                    ?("assets/Nav/x-close.png")
+                    :("assets/Nav/hamburger.png")
                 }
                 alt="Menu button for mobile screenview"
                 onClick={() => setMenuOpen(!menuOpen)}

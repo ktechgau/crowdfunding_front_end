@@ -19,14 +19,14 @@ function NewProjectPage(){
                     <p className="overlayText2" id="line4">Your Goal</p>
                     <p className="overlayText">
                         <a href="#form">
-                        <img className="arrow" src="src/assets/Hero/arrow.png"/>
+                        <img className="arrow" src="assets/Hero/arrow.png"/>
                         </a>
                     </p>
                         
                 </div>
             </div>
             <div className="projectHero">
-                <img className="lightImg" src="src/assets/Images/light.png" alt="image of a lightbulb with a graduation hat on it" />
+                <img className="lightImg" src="assets/Images/light.png" alt="image of a lightbulb with a graduation hat on it" />
             </div>
         </section>
 

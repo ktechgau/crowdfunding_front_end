@@ -4,7 +4,7 @@ import ScrollToAnchor from "../components/ScrollToAnchor";
 import RandomProjectImg from "../components/Projects/RandomProjectSort";
 import useUserTotal from "../hooks/use-user-total";
 import usePledgeTotal from "../hooks/use-pledge-total";
-
+import hero2 from "../assets/Hero/hero2.mp4";
 
 
 function HomePage(){
@@ -36,7 +36,7 @@ function HomePage(){
             <div className="heroImg">
                 <video autoPlay loop className="heroVid">
                 <source type="video/mp4" 
-                src="assets/Hero/hero2.mp4"/>
+                src={hero2}/>
                 </video>   
             </div>
             </section>

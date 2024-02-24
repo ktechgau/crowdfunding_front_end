@@ -5,6 +5,7 @@ import RandomProjectImg from "../components/Projects/RandomProjectSort";
 import useUserTotal from "../hooks/use-user-total";
 import usePledgeTotal from "../hooks/use-pledge-total";
 import hero2 from "../assets/Hero/hero2.mp4";
+import arrow from "../assets/Hero/arrow.png";
 
 
 function HomePage(){
@@ -28,7 +29,7 @@ function HomePage(){
                 <p className="overlayText" id="line4">Lives</p>
                 <p className="overlayText">
                     <Link to="cta-button">
-                        <img className="arrow" src="assets/Hero/arrow.png"/>
+                        <img className="arrow" src={arrow}/>
                     </Link>
                 </p>
             </div>

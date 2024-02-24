@@ -2,6 +2,9 @@ import {Link, Outlet} from "react-router-dom";
 import  "./Navbar.css";
 import React, { useState } from 'react';
 import { useAuth } from "../../hooks/use-auth";
+import hamburger from "../../assets/NavImg/hamburger.png";
+import logo from "../../assets/NavImg/logo.png";
+import close from "../../assets/NavImg/x-close.png";
 
 function NavBar(){
     const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +20,7 @@ function NavBar(){
 
             <Link to="/">
             <img className="logo" 
-            src="assets/Nav/logo.png" 
+            src={logo} 
             alt="OpenDoor's logo leading to homepage"/>
             </Link> 
 
@@ -26,8 +29,8 @@ function NavBar(){
                 <img className="burger"
                 src={
                     menuOpen
-                    ?("assets/Nav/x-close.png")
-                    :("assets/Nav/hamburger.png")
+                    ? close
+                    : hamburger
                 }
                 alt="Menu button for mobile screenview"
                 onClick={() => setMenuOpen(!menuOpen)}

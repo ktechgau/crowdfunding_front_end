@@ -44,7 +44,7 @@ function NavBar(){
                         {auth.token ? (
                             <Link className="link" to="/" onClick={handleLogout}>Log Out</Link>
                         ) 
-                        : (<Link className="link" to="/login">Login</Link>)}
+                        : (<Link className="link" to="/login">Login/Sign Up</Link>)}
 
                     {/*<li><Link className="link" to="/login">Sign In</Link></li>*/}
                 </ul>

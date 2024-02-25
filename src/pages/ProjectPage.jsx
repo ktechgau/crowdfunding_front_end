@@ -1,13 +1,15 @@
 import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
+import { useState } from "react";
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
-import AmmendProjectForm from "../components/Projects/AmmendProjectForm.jsx";
+import deleteProject from "../api/delete-project.js";
 import useUser from "../hooks/use-user.js";
 
 function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
+    const [isDeleteProject, setDeleteProject] = useState(false);
     const {userData, isLoading: userIsLoading, error: userError} = useUser;
    
     console.log("userdata",userData);
@@ -27,6 +29,16 @@ function ProjectPage(){
     const isOwner = userData && userData.id === projectData.project.owner;
     console.log(isOwner);
 
+    const handleDelete = async () =>{
+        try{
+            await deleteProject(projectData.project);
+        // later add a redirect to a delete confirmaton page
+        } catch (error){
+            console.error ("error deleting project", error);
+        }
+    };
+
+
     return (
         <div className="projectPage">
             <section className="project-image">
@@ -44,14 +56,23 @@ function ProjectPage(){
                 <div className="divide">
                 
                 {/* Form only appears if user is owner of project and is logged in*/} 
-                {isOwner ? (
+                {isOwner && (
                     <div>
-                        <p className="text-category">Need to make changes to your page?</p>
-                        <AmmendProjectForm/>
+                        {/* Confirm delete button*/}
+                        {!isDeleteProject ? (
+                            <button onClick={() => setDeleteProject(true)}>Delete Project</button>)
+                            : (
+                                <>
+                                <p> Are you sure you want to delete this page?</p>
+                                <button onClick = {handleDelete}>Yes, delete this page</button>
+                                <button onClick = {() => setDeleteProject(false)}>No do not delete</button>
+                                </>
+                                
+                        )}
+                      
                     </div>
-                ) : null
-                };
-
+                )};
+                
                 <p className="text-category">Would you like to support this goal?</p>
                 <PledgeForm projectId={projectData.project.id}/>    
                 </div>

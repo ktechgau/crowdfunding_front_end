@@ -18,7 +18,6 @@ function NewProjectForm (){
     });
 
     
-    
     //handles the changes in the form
     const handleChange = (event) => {
         const {id, value} = event.target;

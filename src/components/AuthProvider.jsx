@@ -6,6 +6,8 @@ const [auth, setAuth] = useState({
 token: window.localStorage.getItem("token"),
 });
 
+//console.log("Token from localStorage:", auth.token);
+
 return (
 <AuthContext.Provider value={{ auth, setAuth }}>
 {props.children}

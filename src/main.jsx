@@ -12,6 +12,7 @@ import AllProjectsPage from './pages/AllProjectsPage.jsx';
 import NewProjectPage from './pages/NewProjectPage.jsx';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",element:<NavBar/>,

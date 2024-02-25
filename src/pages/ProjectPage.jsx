@@ -1,25 +1,32 @@
-import { useParams, useNavigate } from "react-router-dom"; //useParams is a hook from react router dom
+import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
-import {Link} from "react-router-dom";
-
+import AmmendProjectForm from "../components/Projects/AmmendProjectForm.jsx";
+import useUser from "../hooks/use-user.js";
 
 function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
-    const navigate = useNavigate();
+    const {userData, isLoading: userIsLoading, error: userError} = useUser;
    
-    if (isLoading){
+    console.log("userdata",userData);
+   
+    if (isLoading || userIsLoading){
         return (<p> loading ...</p>)
     }
-    if (error) {
+    if (error || userError) {
         return (<p>{error.message}</p>)
     }
      if (!projectData){
          return null; //This is added to check first if project.pledges exists (not null)
     }
    
+
+    // assigns isOwner to (user is current logged in user, user.id is their login id. owner_id is the id assigned to the project)
+    const isOwner = userData && userData.id === projectData.project.owner;
+    console.log(isOwner);
+
     return (
         <div className="projectPage">
             <section className="project-image">
@@ -35,6 +42,16 @@ function ProjectPage(){
             <section className="blurb">
                 <p className="text"> {projectData.project.description}</p>
                 <div className="divide">
+                
+                {/* Form only appears if user is owner of project and is logged in*/} 
+                {isOwner ? (
+                    <div>
+                        <p className="text-category">Need to make changes to your page?</p>
+                        <AmmendProjectForm/>
+                    </div>
+                ) : null
+                };
+
                 <p className="text-category">Would you like to support this goal?</p>
                 <PledgeForm projectId={projectData.project.id}/>    
                 </div>
@@ -54,13 +71,7 @@ function ProjectPage(){
                         </ul>
                     </div>
                 </section>
-            </section>
-
-        
-
-               
-            
-           
+            </section> 
         </div>
     );
 

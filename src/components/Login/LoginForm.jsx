@@ -22,19 +22,27 @@ function LoginForm(){
         );
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (credentials.username && credentials.password) {
-            postLogin (
-                credentials.username,
-                credentials.password
-            ).then ((response) => {
+            try{
+                const response = await postLogin(
+                    credentials.username,
+                    credentials.password, 
+                );
+                console.log('Response', response);
                 window.localStorage.setItem("token", response.token);
+                window.localStorage.setItem("username", response.username);
+                
                 setAuth({
                      token: response.token,
-                });
+                     username: response.username,
+                    
+                })
                 navigate("/");
-            });
+            } catch(error){
+                console.error("login error: ", error);
+            }
         }
     };
 

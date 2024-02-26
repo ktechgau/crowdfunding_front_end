@@ -1,7 +1,7 @@
 async function getUserData() {
     const url = `${import.meta.env.VITE_API_URL}/users`;
     const token=`Token ${window.localStorage.getItem("token")}`;
-    
+   
     
     
     const response = await fetch (url,{ 
@@ -28,6 +28,9 @@ async function getUserData() {
     //extracting usernames from the array of user objects
     const userUsername = usersData.map(user => user.username);
     console.log('usernameGetUserData', userUsername);
+
+    //tryng to assign isOWner
+   
 
     
     return usersData;  

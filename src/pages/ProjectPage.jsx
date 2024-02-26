@@ -3,14 +3,15 @@ import { useState } from "react";
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
-import deleteProject from "../api/delete-project.js";
-import useUser from "../hooks/use-user.js";
+
+//import deleteProject from "../api/delete-project.js";
+//import useUser from "../hooks/use-user.js";
 
 function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
-    const [isDeleteProject, setDeleteProject] = useState(false);
-    const {usersData, isLoading: userIsLoading, error: userError} = useUser();
+    //const [isDeleteProject, setDeleteProject] = useState(false);
+    //const {usersData, isLoading: userIsLoading, error: userError} = useUser();
    
  
    

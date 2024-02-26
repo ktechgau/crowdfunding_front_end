@@ -21,6 +21,12 @@ if (!response.ok) {
     const errorMessage = data ?.detail ?? fallbackError;
     throw new Error(errorMessage);
 }
-return await response.json();
+const responseData = await response.json();
+console.log("response data", responseData);
+return {
+    token:responseData.token,
+    username: responseData.username,
+   
+};
 }
 export default postLogin;

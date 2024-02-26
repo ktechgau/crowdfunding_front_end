@@ -6,15 +6,28 @@ import useUserTotal from "../hooks/use-user-total";
 import usePledgeTotal from "../hooks/use-pledge-total";
 import hero2 from "../assets/Hero/hero2.mp4";
 import arrow from "../assets/Hero/arrow.png";
+import useUser from "../hooks/use-user";
+import { useAuth } from "../hooks/use-auth";
 
 
 function HomePage(){
     const {totalUsers} = useUserTotal(); //for getting usertotals
     const {totalPledges}= usePledgeTotal();
-    
+    const {usersData} = useUser();
+    const {auth, setAuth} = useAuth();
+   
+
+   
+   
         return (  
             <>
-            <section className="search">
+            <section className = "search">
+            {auth.token && (
+                    <p>{`${"Welcome back, "} ${usersData}`}</p>
+                )}
+           
+
+           
             <p>Enter search function here</p>
             </section>
             <section className="hero">

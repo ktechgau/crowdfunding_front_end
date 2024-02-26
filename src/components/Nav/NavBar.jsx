@@ -9,6 +9,7 @@ import close from "../../assets/NavImg/x-close.png";
 function NavBar(){
     const [menuOpen, setMenuOpen] = useState(false);
     const {auth, setAuth} = useAuth();
+    
     const handleLogout = () => {
         window.localStorage.removeItem("token");
         setAuth({ token: null });
@@ -23,7 +24,7 @@ function NavBar(){
             src={logo} 
             alt="OpenDoor's logo leading to homepage"/>
             </Link> 
-
+            
             <div className="menu">
                 
                 <img className="burger"
@@ -35,7 +36,7 @@ function NavBar(){
                 alt="Menu button for mobile screenview"
                 onClick={() => setMenuOpen(!menuOpen)}
                 />
-
+               
                 <ul className={`${"menuItems"} ${menuOpen && "menuOpenStyle"}`}
                     onClick={() => setMenuOpen(false)}>
                     <li><Link className= "link" to="/">Home</Link></li>

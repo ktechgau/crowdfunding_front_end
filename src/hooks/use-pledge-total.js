@@ -8,7 +8,7 @@ function usePledgeTotal() {
 
     useEffect(() => {
         getTotalPledges()
-            .then((pledges) => { console.log("pledges",pledges)
+            .then((pledges) => { 
                 setTotalPledges(pledges);
                 setIsLoading(false);
             })

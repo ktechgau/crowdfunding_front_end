@@ -10,9 +10,9 @@ function ProjectPage(){
     const { id } = useParams();
     const { projectData, isLoading, error } = useProject(id);
     const [isDeleteProject, setDeleteProject] = useState(false);
-    const {userData, isLoading: userIsLoading, error: userError} = useUser;
+    const {usersData, isLoading: userIsLoading, error: userError} = useUser();
    
-    console.log("userdata",userData);
+ 
    
     if (isLoading || userIsLoading){
         return (<p> loading ...</p>)
@@ -24,10 +24,10 @@ function ProjectPage(){
          return null; //This is added to check first if project.pledges exists (not null)
     }
    
-
+   
     // assigns isOwner to (user is current logged in user, user.id is their login id. owner_id is the id assigned to the project)
-    const isOwner = userData && userData.id === projectData.project.owner;
-    console.log(isOwner);
+    const isOwner = usersData  === projectData?.project?.owner;
+    console.log('isOwner',isOwner);
 
     const handleDelete = async () =>{
         try{

@@ -1,11 +1,13 @@
-import useProjects from "../hooks/use-projects";
+import useProjectCategory from "../hooks/use-project-category.js";
 import ProjectCard from "../components/Projects/ProjectCard.jsx";
 import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
 import "../components/Projects/AllprojectsPage.css";
+import { useEffect } from "react";
+import ImageForCategory from "../components/CategoryImages.jsx";
 
-function AllProjectsPage({category}){
-    const { projects, isLoading, error } = useProjects(category);
+function AllProjectsPage(){
+    const { categories, isLoading, error } = useProjectCategory();
     
     if (isLoading) {
         return <p>Loading...</p>;
@@ -14,7 +16,7 @@ function AllProjectsPage({category}){
       if (error) {
         return <p>Error: {error.message}</p>;
       }
-    
+   
     return (
         <>
         <section className="hero2">
@@ -49,16 +51,20 @@ function AllProjectsPage({category}){
 
         <section className="allProjectsContainer">
         <div id="project-list">
-            {projects.map((projectData, key) =>{
-                return (
-                < div key={key} className="project-card">
-                    <img src={projectData.image} alt = "{projectData.title}"/>
-                    <p>Category: {projectData.category}</p>
-           </div>
-                );
-            })}
+          {categories.map((category, index) => (
+            <div key={index}>
+              {/* Render category name */}
+              <h2>{category}</h2>
+              {/* Render category image */}
+              <ImageForCategory category={category}/>
+              {/* Render projects for the category */}
+              <div className="project-images">
+                {/* Render projects here */}
+              </div>
+            </div>
+          ))}
         </div>
-        </section>
+      </section>
 
         </>
     );

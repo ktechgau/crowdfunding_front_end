@@ -22,6 +22,7 @@ const router = createBrowserRouter([
     {path:"/ask", element:<NewProjectPage/>},
     {path:"/login", element: <LoginPage />},
     {path:"/project/:id", element:<ProjectPage/>},
+   
   ],
 },
 ]);

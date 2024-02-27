@@ -37,7 +37,7 @@ function LoginForm(){
                 console.error("login error: ", error);
             }}};
             return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="username">Username:</label>
                 <input type="text" 
@@ -55,7 +55,7 @@ function LoginForm(){
                 onChange={handleChange}
                 />
             </div>
-            <button type="submit" onClick={handleSubmit}>Login</button>
+            <button type="submit">Login</button>
         </form>
     );
 }

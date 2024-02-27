@@ -11,17 +11,13 @@ function LoginForm(){
         username: "",
         password: "",
     });
-
     const handleChange = (event) => {
         const { id,value } = event.target;
         setCredentials ((prevCredentials) => ({
             ...prevCredentials,
             [id]: value,
-        })
-        
-        );
+        }));
     };
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (credentials.username && credentials.password) {
@@ -30,23 +26,17 @@ function LoginForm(){
                     credentials.username,
                     credentials.password, 
                 );
-                console.log('Response', response);
-                window.localStorage.setItem("token", response.token);
-                window.localStorage.setItem("username", response.username);
-                
+                window.localStorage.setItem("token", response.token); 
                 setAuth({
                      token: response.token,
-                     username: response.username,
-                    
+                     username: response.username, 
+                     userId: response.user_id,   
                 })
                 navigate("/");
             } catch(error){
                 console.error("login error: ", error);
-            }
-        }
-    };
-
-    return (
+            }}};
+            return (
         <form>
             <div>
                 <label htmlFor="username">Username:</label>
@@ -66,7 +56,6 @@ function LoginForm(){
                 />
             </div>
             <button type="submit" onClick={handleSubmit}>Login</button>
-        
         </form>
     );
 }

@@ -1,43 +1,50 @@
 import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
-import { useState } from "react";
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
-
-//import deleteProject from "../api/delete-project.js";
-//import useUser from "../hooks/use-user.js";
+import deleteProject from "../api/delete-project.js";
+import { useAuth } from "../hooks/use-auth.js";
 
 function ProjectPage(){
     const { id } = useParams();
-    const { projectData, isLoading, error } = useProject(id);
+    const {auth} = useAuth();   
+    console.log('authdeets:',auth);
     //const [isDeleteProject, setDeleteProject] = useState(false);
-    //const {usersData, isLoading: userIsLoading, error: userError} = useUser();
-   
- 
-   
-    if (isLoading || userIsLoading){
+    const { projectData, isLoading, error } = useProject(id);
+    
+
+    
+    if (isLoading){
         return (<p> loading ...</p>)
     }
-    if (error || userError) {
+    if (error) {
         return (<p>{error.message}</p>)
     }
      if (!projectData){
          return null; //This is added to check first if project.pledges exists (not null)
     }
+    if (!auth || !projectData){
+        return null;
+    }
    
-   
-    // assigns isOwner to (user is current logged in user, user.id is their login id. owner_id is the id assigned to the project)
-    const isOwner = usersData  === projectData?.project?.owner;
-    console.log('isOwner',isOwner);
+    const owner = projectData.project.owner;
+    const userToken = auth.token;
+    const userId = auth.userId;
+    const isOwner = owner === userToken;
+    
+    console.log('isOwner',isOwner)
+    console.log("username:", userToken);
+    console.log("owner:", owner);
+    console.log("userid:", userId);
 
-    const handleDelete = async () =>{
-        try{
-            await deleteProject(projectData.project);
-        // later add a redirect to a delete confirmaton page
-        } catch (error){
-            console.error ("error deleting project", error);
-        }
-    };
+    // const handleDelete = async () =>{
+    //     try{
+    //         await deleteProject(projectData.project);
+    //     // later add a redirect to a delete confirmaton page
+    //     } catch (error){
+    //         console.error ("error deleting project", error);
+    //     }
+    // };
 
 
     return (

@@ -10,23 +10,18 @@ async function postLogin (username, password){
         "password": password,
     }),
 });
-
 if (!response.ok) {
     const fallbackError = 'Error trying to login';
 
     const data= await response.json().catch(() => {
         throw new Error(fallbackError);
     });
-
     const errorMessage = data ?.detail ?? fallbackError;
     throw new Error(errorMessage);
 }
 const responseData = await response.json();
-console.log("response data", responseData);
-return {
-    token:responseData.token,
-    username: responseData.username,
-   
-};
+
+window.localStorage.setItem("user_id", responseData.user_id);
+return responseData;  
 }
 export default postLogin;

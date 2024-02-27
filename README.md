@@ -1,14 +1,32 @@
-# React + Vite
+# Crowdfunding Project (Front end with React JS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="src/assets/Images/OpenDoorlogo.png">
+</p>
 
-Currently, two official plugins are available:
+## OpenDoor by Karla Gaudet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# crowdfunding_front_end
+[View live site here](https://opendoor.netlify.app/)
 
-reference:
+OpenDoor is a crowdfunding site that allows people to ask for financial sponsorships that will aid the sponsee to pay for study fees and/or study equipment and tools.
+
+### Intended Audience/User Stories
+OpenDoor is intended for anyone with a plan to pursue a study path to further their education and for sponsors to aid in gifting funds for that person to reach their goals.
+
+#### Screenshots
+
+***<insert screenshot of homepage here>***
+
+***<insert screesnshot of project creation page here>***
+
+***<insert screesnshot of project creation form here>***
+
+***<insert screesnshot of project with pledges here>***
+
+***<insert screesnshot of resulting page when an unauthorized user attempts to edita project here>***
+
+
+##### References and Resources:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 

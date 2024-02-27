@@ -4,8 +4,17 @@ import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
 import "../components/Projects/AllprojectsPage.css";
 
-function AllProjectsPage(){
-    const { projects } = useProjects();
+function AllProjectsPage({category}){
+    const { projects, isLoading, error } = useProjects(category);
+    
+    if (isLoading) {
+        return <p>Loading...</p>;
+      }
+    
+      if (error) {
+        return <p>Error: {error.message}</p>;
+      }
+    
     return (
         <>
         <section className="hero2">
@@ -41,7 +50,12 @@ function AllProjectsPage(){
         <section className="allProjectsContainer">
         <div id="project-list">
             {projects.map((projectData, key) =>{
-                return <ProjectCard  key={key} projectData={projectData}/>;
+                return (
+                < div key={key} className="project-card">
+                    <img src={projectData.image} alt = "{projectData.title}"/>
+                    <p>Category: {projectData.category}</p>
+           </div>
+                );
             })}
         </div>
         </section>

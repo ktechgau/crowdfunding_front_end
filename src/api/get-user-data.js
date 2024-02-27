@@ -24,10 +24,10 @@ async function getUserData() {
     
     //extract user Ids from the array of user objects
     const userId = usersData.map(user => user.id);
-    console.log("userIdGetUserData:", userId); 
+  
     //extracting usernames from the array of user objects
     const userUsername = usersData.map(user => user.username);
-    console.log('usernameGetUserData', userUsername);
+   
 
     //tryng to assign isOWner
    

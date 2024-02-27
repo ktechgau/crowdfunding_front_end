@@ -30,7 +30,7 @@ function ProjectPage(){
     const owner = projectData.project.owner;
     const userToken = auth.token;
     const userId = auth.userId;
-    const isOwner = owner === userToken;
+    const isOwner = owner === userId;
     
     console.log('isOwner',isOwner)
     console.log("username:", userToken);

@@ -21,7 +21,8 @@ if (!response.ok) {
 }
 const responseData = await response.json();
 
-window.localStorage.setItem("user_id", responseData.user_id);
+window.localStorage.setItem("user_id", responseData.user_id.toString());
+
 return responseData;  
 }
 export default postLogin;

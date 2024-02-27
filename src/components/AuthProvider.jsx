@@ -5,7 +5,7 @@ export const AuthProvider = (props) => {
 
 const [auth, setAuth] = useState({
     token: window.localStorage.getItem("token"),
-    userId: window.localStorage.getItem("userId"),
+    userId: Number(window.localStorage.getItem("user_id")),
     username: window.localStorage.getItem("username"),
 });
 return (

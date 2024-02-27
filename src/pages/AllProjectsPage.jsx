@@ -51,10 +51,8 @@ function AllProjectsPage({category}){
         <div id="project-list">
             {projects.map((projectData, key) =>{
                 return (
-                < div key={key} className="project-card">
-                    <img src={projectData.image} alt = "{projectData.title}"/>
-                    <p>Category: {projectData.category}</p>
-           </div>
+                    
+                <ProjectCard key={key} projectData={projectData} />
                 );
             })}
         </div>

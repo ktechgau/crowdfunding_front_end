@@ -36,8 +36,12 @@ function LoginForm(){
             } catch(error){
                 console.error("login error: ", error);
             }}};
+
+
             return (
-        <form onSubmit={handleSubmit}>
+                <>
+            <section className="form-container">
+            <form onClick={handleSubmit}>
             <div>
                 <label htmlFor="username">Username:</label>
                 <input type="text" 
@@ -55,8 +59,14 @@ function LoginForm(){
                 onChange={handleChange}
                 />
             </div>
-            <button type="submit">Login</button>
-        </form>
+            </form>
+            </section>
+            <section className="cta-button" id="cta-button">
+            <button className="link" type="submit">Login</button>
+            </section>
+        
+         </>
+       
     );
 }
 export default LoginForm;

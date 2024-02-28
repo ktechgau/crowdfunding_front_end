@@ -2,7 +2,7 @@ import useProjectCategory from "../hooks/use-project-category.js";
 import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
 import "../components/Projects/AllprojectsPage.css";
-import Categories from "./CategoryPage.jsx";
+import { Link } from "react-router-dom";
 
 function AllProjectsPage(){
   
@@ -48,8 +48,22 @@ function AllProjectsPage(){
                 <p className="overlayText-project"><span className="italic" id="line1-project">Category</span></p>
         </section>
 
-       <section>
-        <Categories groupedProjects={groupedProjects}/> {/* Renders the Categories component */}
+       <section className="categories">
+        {Object.keys(groupedProjects).map(categoryName => (
+           <div className="categories" key={categoryName}>
+            <Link to={`/projects/${categoryName}`}>
+                   
+                    <h2>{categoryName}</h2>
+                </Link>
+           
+            {/*<CategoryProjects 
+            // categoryName={categoryName}
+            // groupedProjects={groupedProjects}
+            // key={categoryName}
+            // /> */}
+            </div>
+        ))}
+        
        </section>
         </>
     );

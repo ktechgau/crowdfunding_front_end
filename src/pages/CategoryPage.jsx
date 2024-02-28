@@ -6,14 +6,18 @@ import SubCategories from './SubCategoryPage.jsx';
 
 function Categories() {
     const { groupedProjects } = useProjectCategory();
+    
+
 console.log('groupedprojects', groupedProjects);
     const renderCategoryImages = () => {
         return Object.entries(groupedProjects).map(([categoryName, categoryData], index) => (  
             <div key={index}>
+            
+                <h1>TEST</h1>
                 <Link to={`/projects/${categoryName}`}>
                     <img src={categoryData.image} alt={categoryName} />
                 </Link>
-                {console.log('categoryName:', categoryName)}
+                {console.log('categoryData:', categoryData)}
                 <section>
                
         <SubCategories key={index} categoryData={categoryData} categoryName={categoryName} />

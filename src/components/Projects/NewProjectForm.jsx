@@ -42,8 +42,10 @@ function NewProjectForm (){
     }
 
      return(
-    <form>
+        <>
         <section className="form-container">
+    <form onSubmit={handleSubmit}>
+       
         <div>
             <label htmlFor="title">Title </label>
             <input id="title"
@@ -101,16 +103,15 @@ function NewProjectForm (){
             </select>
         </div> */}
        
-    </section>
-
-    <section className="cta-button" id="cta-button">
-    <button className="link" type="submit" onClick={handleSubmit}>
-    Create a Page</button>
-    </section>
-
     </form>
+    </section>
+    <section className="cta-button" id="cta-button">
+    <button className="link" type="submit" >Create a Page</button>
+    </section>
 
-    
+   
+
+    </>
     );
 }
 export default NewProjectForm;

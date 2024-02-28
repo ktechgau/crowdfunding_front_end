@@ -39,7 +39,7 @@ function NewLoginForm(){
     };
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="username">Username:</label>
                 <input type="text" 
@@ -57,7 +57,7 @@ function NewLoginForm(){
                 onChange={handleChange}
                 />
             </div>
-            <button type="submit" onClick={handleSubmit}>Sign Up</button>
+            <button type="submit">Sign Up</button>
         
         </form>
     );

@@ -1,0 +1,17 @@
+ { "AGRI": "/public/Category/Agri.png",
+    "ARCHITECTURE":"/public/Category/Archi.png",
+    "BUSINESS":"/public/Category/Business.png",
+    "CREATIVE":"/public/Category/Creative.png",
+    "EDUCATION":"/public/Category/Edu.png",
+    "ENGINEERING":"/public/Category/Engineer.png",
+    "ENVIRONMENTAL":"/public/Category/Environ.png",
+    "HEALTH":"/public/Category/Health.png",
+    "IT":"/public/Category/IT.png",
+    "LAW":"/public/Category/Law.png",
+    "MEDIA":"/public/Category/Media.png",
+    "SCIENCES":"/public/Category/Science.png",
+    "SOCIETY":"/public/Category/Society.png",
+    "TRAVEL":"/public/Category/Travel.png",
+    "OTHER":"/public/Category/Other.png"
+}
+

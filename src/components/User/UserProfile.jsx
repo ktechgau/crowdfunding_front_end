@@ -4,7 +4,7 @@ import { AuthContext } from '../AuthProvider';
 function userProfile(){
     const { auth } = useContext(AuthContext);
     const { username, userId} =auth;
-console.log('auth:', username);
+
     return(
         <div>
             <h2>User Profile</h2>

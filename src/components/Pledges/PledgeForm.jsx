@@ -6,7 +6,7 @@ import postPledge from "../../api/post-pledge.js";
 
 function PledgeForm ({projectId}){
     const navigate = useNavigate();
-    console.log(projectId);
+    
     
 
     const [pledgeData, setPledgeData] = useState ({
@@ -36,7 +36,7 @@ function PledgeForm ({projectId}){
             
         )
         .then((response) => {
-            console.log(response);
+           
             navigate(`/project/${projectId}`);
         });
     }

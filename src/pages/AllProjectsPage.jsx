@@ -1,14 +1,13 @@
 import useProjectCategory from "../hooks/use-project-category.js";
-import ProjectCard from "../components/Projects/ProjectCard.jsx";
 import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
 import "../components/Projects/AllprojectsPage.css";
-import { useEffect } from "react";
-import ImageForCategory from "../components/CategoryImages.jsx";
+import Categories from "./CategoryPage.jsx";
 
 function AllProjectsPage(){
-    const { categories, isLoading, error } = useProjectCategory();
-    
+  
+    const { groupedProjects, isLoading, error } = useProjectCategory();
+    console.log("allprojects page:", groupedProjects)
     if (isLoading) {
         return <p>Loading...</p>;
       }
@@ -49,23 +48,9 @@ function AllProjectsPage(){
                 <p className="overlayText-project"><span className="italic" id="line1-project">Category</span></p>
         </section>
 
-        <section className="allProjectsContainer">
-        <div id="project-list">
-          {categories.map((category, index) => (
-            <div key={index}>
-              {/* Render category name */}
-              <h2>{category}</h2>
-              {/* Render category image */}
-              <ImageForCategory category={category}/>
-              {/* Render projects for the category */}
-              <div className="project-images">
-                {/* Render projects here */}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
+       <section>
+        <Categories groupedProjects={groupedProjects}/> {/* Renders the Categories component */}
+       </section>
         </>
     );
 }

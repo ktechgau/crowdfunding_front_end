@@ -1,28 +1,26 @@
 import { useState, useEffect } from "react";
 import getProjectsCategory from "../api/get-project-category";
 
-function useProjectCategory(category) {
-    const [categories, setCategories] = useState([]);
+function useProjectCategory() {
+    const [groupedProjects, setGroupedProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState();
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        getProjectsCategory(category)
-            .then((groupedProjects) => {
-                const categoryList = Object.keys(groupedProjects);
-                setCategories(categoryList);
-                setIsLoading(false);
-            })
-            .catch((error) => {
+        const fetchData = async () => {
+            try {
+                const projects = await getProjectsCategory();
+                setGroupedProjects(projects);
+            } catch (error) {
                 setError(error);
+            } finally {
                 setIsLoading(false);
-            });
-    }, [category]);
-    
-    console.log("Categories:", categories);
-    console.log("isLoading:", isLoading);
-    console.log("Error:", error);
-   
-     return {categories, isLoading, error};
+            }
+        };
+        fetchData();
+    }, []);
+
+    return { groupedProjects, isLoading, error };
 }
+
 export default useProjectCategory;

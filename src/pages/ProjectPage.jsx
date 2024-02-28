@@ -2,13 +2,13 @@ import { useParams } from "react-router-dom"; //useParams is a hook from react r
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
-import deleteProject from "../api/delete-project.js";
+//import deleteProject from "../api/delete-project.js";
 import { useAuth } from "../hooks/use-auth.js";
 
 function ProjectPage(){
     const { id } = useParams();
     const {auth} = useAuth();   
-    console.log('authdeets:',auth);
+   
     //const [isDeleteProject, setDeleteProject] = useState(false);
     const { projectData, isLoading, error } = useProject(id);
     

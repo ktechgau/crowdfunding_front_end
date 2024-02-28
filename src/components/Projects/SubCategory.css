@@ -5,3 +5,9 @@ background-color: var(--white);
 .subcategory1{
 background-color: white;
 }
+
+.categories{
+    background-color: var(--white);
+    background: white;
+    
+}

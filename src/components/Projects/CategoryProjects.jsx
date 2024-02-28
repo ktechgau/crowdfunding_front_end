@@ -6,6 +6,7 @@ function CategoryProjects({ categoryName, groupedProjects }) {
     return (
         <div className="subcategoryPage">
             <h2>{categoryName}</h2>
+            <h1>TEST</h1>
             <ul>
                 {categoryProjects.map(project => (
                     <li key={project.id}>

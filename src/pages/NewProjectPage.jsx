@@ -2,22 +2,20 @@ import NewProjectForm from "../components/Projects/NewProjectForm.jsx";
 import "../components/Projects/NewProjectPage.css"
 import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
+import help from "../assets/Hero/help.png";
 
 function NewProjectPage(){
     return (
     <>
-    <section className="hero2">
-            <div className="search">
-                <p>Enter search function here</p>
-            </div>
-            <div className="overlay2">
-                <div className="overlayContainer2">
-                    <p className="overlayText2">
+    <section className="hero">
+            <div className="overlay">
+                <div className="overlayContainer">
+                    <p className="overlayText">
                         <span className="italic" id="line1">Ask</span> for
                     </p>
-                    <p className="overlayText2" id="line2">Help</p>
-                    <p className="overlayText2" id="line3"><span className="italic">Reach</span></p>
-                    <p className="overlayText2" id="line4">Your Goal</p>
+                    <p className="overlayText" id="line2">Help</p>
+                    <p className="overlayText" id="line3"><span className="italic">Reach</span></p>
+                    <p className="overlayText" id="line4">Your Goal</p>
                     <p className="overlayText">
                         <a href="#form">
                         <img className="arrow" src={arrow}/>
@@ -26,8 +24,8 @@ function NewProjectPage(){
                         
                 </div>
             </div>
-            <div className="projectHero">
-                <img className="lightImg" src={light} alt="image of a lightbulb with a graduation hat on it" />
+            <div className="heroImg">
+                <img className="heroVid" src={help} alt="image of a lightbulb with a graduation hat on it" />
             </div>
         </section>
 

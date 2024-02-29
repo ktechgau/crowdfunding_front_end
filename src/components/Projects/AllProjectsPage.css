@@ -1,16 +1,19 @@
-#project-list{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: 10px;
-    row-gap: 10px;
-    background-color: var(--white);
-}
-
-.allProjectsContainer{
-    background-color: var(--white);
-}
+@import '../vars.css';
 
 .categories{
-
-    background-color: var(--white);
+    background-color: lightgray;
+    margin:50px 10px;
+border-radius: 15px;
 }
+
+
+.category-list{
+    display: grid;
+    grid-template-columns: 50% 50% 50%;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: 20px auto;
+   
+}
+
+

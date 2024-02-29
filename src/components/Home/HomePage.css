@@ -89,6 +89,14 @@
     margin: 50px 30px;;
     border: solid 1px var(--orange);
     border-radius: 15px;
+    text-decoration: none;
+    color: var(--orange);
+   
+}
+
+.cta-button:hover{
+    color: var(--white);
+    text-shadow: 0 0 5px #feeaf6, 0 0 15px #feb9e3, 0 0 20px #fe89d0, 0 0 40px #fe58bc, 0 0 60px #fb0098, 0 0 10px #cb007b, 0 0 98px #ff0000;
 }
 
 /*Featured Projects section*/

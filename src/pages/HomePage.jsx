@@ -84,15 +84,12 @@ function HomePage(){
 
             
             <section className="counterContainer">
-                <div>
                 <div className="totals">
                     <p id="counterText1"><span className="italic" id="line1">We've helped</span></p>
                     <p id="counterText2">{totalUsers}</p>
                     <p id="counterText3"><span className="italic" id="line1">people raise </span></p>
                     <p id="counterText2">{totalPledges}</p>
                     
-                    
-                    </div>
                 </div>
             </section>
            

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useProjects from "../../hooks/use-projects.js";
 import ProjectCard from "./ProjectCard.jsx";
 
+
 function RandomProjectImg(){
     const { projects } = useProjects();
     const [currentProject, setCurrentProject] = useState(null);

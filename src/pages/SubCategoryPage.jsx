@@ -1,9 +1,9 @@
 import React from 'react';
 import useProjectCategory from '../hooks/use-project-category';
-import CategoryProjects from '../components/Projects/SubCategoryList';
 import "../components/Projects/SubCategory.css";
-import { Link } from 'react-router-dom';
 import SubCategoryList from '../components/Projects/SubCategoryList';
+import door from "../assets/Hero/door.png";
+import arrow from "../assets/Hero/arrow.png";
 
 function SubCategoryPage({categoryName}) {
 
@@ -29,11 +29,40 @@ function SubCategoryPage({categoryName}) {
 
 return(
     <>
-    <section className="categories">
-       <h1>TEST</h1>
+
+
+        <section className="hero">
+            <div className="overlay">
+                <div className="overlayContainer">
+                    <p className="overlayText">
+                        <span className="italic" id="line1">See</span>
+                    </p>
+                    <p className="overlayText" id="line2">who</p>
+                    <p className="overlayText" id="line3"><span className="italic"> is</span></p>
+                    <p className="overlayText" id="line4">
+                    in Need
+                    </p>
+                    <p className="overlayText">
+                        <a href="#form">
+                        <img className="arrow" src={arrow}/>
+                        </a>
+                    </p>
+                        
+                </div>
+            </div>
+            <div className="heroImg">
+                <img className="heroVid" src={door} alt="image of a lightbulb with a graduation hat on it" />
+            </div>
+        </section>
+
+       
+
+    <section className="categories2">
+    <div className="categories-container">
        {Object.keys(groupedProjects).map(categoryName =>
         <SubCategoryList key={categoryName} groupedProjects={groupedProjects}/>
         )}
+    </div>
     </section>
 
     </>

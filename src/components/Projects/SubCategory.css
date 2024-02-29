@@ -11,3 +11,10 @@ background-color: white;
     background: white;
     
 }
+
+.categories2{
+    background-color: lightgray;
+    margin:50px 10px;
+    border-radius: 15px;
+    padding: 30px;
+}

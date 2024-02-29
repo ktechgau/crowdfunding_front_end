@@ -12,11 +12,7 @@ function SubCategoryList(props) {
         <div className="subcategoryPage">
             {groupedProjects[categoryName].map(project => (
                 <ProjectCard key={project.id} projectData={project}/>
-                    // <li key={project.id}>
-                    //     <p>{project.title}</p>
-                    //     <p>{project.description}</p>
-                       
-                    // </li>
+                   
                 ))}
             
             </div>

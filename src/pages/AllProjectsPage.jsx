@@ -1,12 +1,13 @@
-import useProjects from "../hooks/use-projects";
-import ProjectCard from "../components/Projects/ProjectCard.jsx";
+import useProjectCategory from "../hooks/use-project-category.js";
 import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
 import "../components/Projects/AllprojectsPage.css";
+import { Link } from "react-router-dom";
 
-function AllProjectsPage({category}){
-    const { projects, isLoading, error } = useProjects(category);
-    
+function AllProjectsPage(){
+  
+    const { groupedProjects, isLoading, error } = useProjectCategory();
+    console.log("allprojects page:", groupedProjects)
     if (isLoading) {
         return <p>Loading...</p>;
       }
@@ -14,7 +15,7 @@ function AllProjectsPage({category}){
       if (error) {
         return <p>Error: {error.message}</p>;
       }
-    
+   
     return (
         <>
         <section className="hero2">
@@ -47,17 +48,23 @@ function AllProjectsPage({category}){
                 <p className="overlayText-project"><span className="italic" id="line1-project">Category</span></p>
         </section>
 
-        <section className="allProjectsContainer">
-        <div id="project-list">
-            {projects.map((projectData, key) =>{
-                return (
-                    
-                <ProjectCard key={key} projectData={projectData} />
-                );
-            })}
-        </div>
-        </section>
-
+       <section className="categories">
+        {Object.keys(groupedProjects).map(categoryName => (
+           <div className="categories" key={categoryName}>
+            <Link to={`/projects/${categoryName}`}>
+                   
+                    <h2>{categoryName}</h2>
+                </Link>
+           
+            {/*<CategoryProjects 
+            // categoryName={categoryName}
+            // groupedProjects={groupedProjects}
+            // key={categoryName}
+            // /> */}
+            </div>
+        ))}
+        
+       </section>
         </>
     );
 }

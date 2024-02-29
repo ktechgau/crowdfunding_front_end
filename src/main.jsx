@@ -10,7 +10,7 @@ import NavBar from './components/Nav/NavBar.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import AllProjectsPage from './pages/AllProjectsPage.jsx';
 import NewProjectPage from './pages/NewProjectPage.jsx';
-
+import SubCategoryPage from './pages/SubCategoryPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,6 +22,8 @@ const router = createBrowserRouter([
     {path:"/ask", element:<NewProjectPage/>},
     {path:"/login", element: <LoginPage />},
     {path:"/project/:id", element:<ProjectPage/>},
+    {path:"/projects/:categoryName", element:<SubCategoryPage/>},
+   
   ],
 },
 ]);

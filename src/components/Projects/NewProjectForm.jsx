@@ -35,7 +35,6 @@ function NewProjectForm (){
             {...projectData}
         )
         .then((response) => {
-            console.log(response);
             navigate(`/project/${response.id}`);
         });
     }

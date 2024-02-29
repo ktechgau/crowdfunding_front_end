@@ -1,7 +1,6 @@
 import NewProjectForm from "../components/Projects/NewProjectForm.jsx";
 import "../components/Projects/NewProjectPage.css"
 import arrow from "../assets/Hero/arrow.png";
-import light from "../assets/Images/light.png";
 import help from "../assets/Hero/help.png";
 
 function NewProjectPage(){

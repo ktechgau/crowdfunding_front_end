@@ -19,7 +19,7 @@ function useProjectCategory() {
         };
         fetchData();
     }, []);
-
+console.log('group projects:',groupedProjects["AGRI"]);
     return { groupedProjects, isLoading, error };
 }
 

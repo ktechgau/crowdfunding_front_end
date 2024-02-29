@@ -1,12 +1,15 @@
 import React from 'react';
 import useProjectCategory from '../hooks/use-project-category';
-import CategoryProjects from '../components/Projects/CategoryProjects';
+import CategoryProjects from '../components/Projects/SubCategoryList';
 import "../components/Projects/SubCategory.css";
+import { Link } from 'react-router-dom';
+import SubCategoryList from '../components/Projects/SubCategoryList';
 
-function SubCategories({categoryName}) {
+function SubCategoryPage({categoryName}) {
 
     const { groupedProjects, isLoading, error } = useProjectCategory(categoryName);
     console.log("allprojects page:", groupedProjects)
+    console.log("categoryname",categoryName);
     if (isLoading) {
         return <p>Loading...</p>;
       }
@@ -20,33 +23,25 @@ function SubCategories({categoryName}) {
         return <p>No data available</p>;
     }
     // Check if the category exists in groupedProjects
-    if (!groupedProjects[categoryName]) {
-    return <p>No projects available for this category.</p>;
-}
+//     if (!groupedProjects[categoryName]) {
+//     return <p>No projects available for this category.</p>;
+// }
 
-    return (
-<>
+return(
+    <>
+    <section className="categories">
+       <h1>TEST</h1>
+       {Object.keys(groupedProjects).map(categoryName =>
+        <SubCategoryList key={categoryName} groupedProjects={groupedProjects}/>
+        )}
+    </section>
 
-<h1>TEST</h1>
-<section className="categories">
-        {Object.keys(groupedProjects).map(categoryName => (
-           <div className="categories" key={categoryName} groupedProjects={groupedProjects}>
-            <Link to={`/projects/${categoryName}`}>
-                   
-                    <h2>{categoryName}</h2>
-                </Link>
-            </div>
-        ))}
-        
-       </section>
-     
-        </>
-    );
-   
+    </>
+);
 }
 
 
-export default SubCategories;
+export default SubCategoryPage;
 
  
    

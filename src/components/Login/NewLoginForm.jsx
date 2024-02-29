@@ -39,27 +39,33 @@ function NewLoginForm(){
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="username">Username:</label>
-                <input type="text" 
-                id="username" 
-                placeholder="Enter username"
-                onChange={handleChange}
-                />
-            </div>
-            <div>
-            <label htmlFor="password">Password:</label>
-                <input 
-                type="text" 
-                id="password" 
-                placeholder="Enter password"
-                onChange={handleChange}
-                />
-            </div>
-            <button type="submit">Sign Up</button>
-        
+        <>
+        <section className="form-container">
+        <form >
+        <div>
+            <label htmlFor="username">Username:</label>
+            <input type="text" 
+            id="username" 
+            placeholder="Enter username"
+            onChange={handleChange}
+            />
+        </div>
+        <div>
+        <label htmlFor="password">Password:</label>
+            <input 
+            type="text" 
+            id="password" 
+            placeholder="Enter password"
+            onChange={handleChange}
+            />
+        </div>
         </form>
+        </section>
+        <section className="cta-button" id="cta-button">
+        <button className="link" onClick={handleSubmit} type="submit">Create</button>
+        </section>
+    
+     </>
     );
 }
 export default NewLoginForm;

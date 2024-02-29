@@ -1,2 +1,15 @@
 @import '../vars.css';
 
+.login{
+    background-color: var(--black);
+
+}
+
+.form{
+    background-color: var(--black);
+  
+}
+
+.form-page{
+    padding-top: 50px;
+}

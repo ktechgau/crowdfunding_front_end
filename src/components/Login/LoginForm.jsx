@@ -41,7 +41,7 @@ function LoginForm(){
             return (
                 <>
             <section className="form-container">
-            <form onClick={handleSubmit}>
+            <form >
             <div>
                 <label htmlFor="username">Username:</label>
                 <input type="text" 
@@ -62,7 +62,7 @@ function LoginForm(){
             </form>
             </section>
             <section className="cta-button" id="cta-button">
-            <button className="link" type="submit">Login</button>
+            <button className="link" onClick={handleSubmit} type="submit">Log In</button>
             </section>
         
          </>

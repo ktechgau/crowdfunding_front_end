@@ -1,5 +1,5 @@
-async function putProject(project) {
-    const url =`${import.meta.env.VITE_API_URL}/projects/${id}/`;
+async function putProject(projectId, projectData) {
+    const url =`${import.meta.env.VITE_API_URL}/projects/${projectId}`;
     const token=`Token ${window.localStorage.getItem("token")}`;
     
 
@@ -11,13 +11,13 @@ async function putProject(project) {
        
     },
     body: JSON.stringify({
-        ...project,
+        ...projectData,
        
     }),
     
 });
     if (!response.ok){
-        const fallbackError = "Error creating a new page";
+        const fallbackError = "Error updating the page";
         const data = await response.json().catch(() => {
             throw new Error(fallbackError)
         });

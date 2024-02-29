@@ -1,10 +1,9 @@
 async function getProjectsCategory(){
-    const url = `${import.meta.env.VITE_API_URL}/projects/`; //define your endpoint
-    const response = await fetch(url, {method: "GET"}); //the promise
-
+    const url = `${import.meta.env.VITE_API_URL}/projects/`; 
+    const response = await fetch(url, {method: "GET"}); 
     if (!response.ok) {
-        const fallbackError = "Error fetching projects";   //sets the error message
-        const data = await response.json().catch(() =>{ //if doesn't return the json data, it will catch it and throw the error
+        const fallbackError = "Error fetching projects";  
+        const data = await response.json().catch(() =>{ 
             throw new Error(fallbackError);
         });
 
@@ -12,9 +11,8 @@ async function getProjectsCategory(){
         throw new Error(errorMessage);
     }
     const projects = await response.json();
-    //console.log(projects);
+   
 
-    //place projects in categories
     const groupedProjects = projects.reduce((accumulator,project) =>{
         const category = project.category;
 
@@ -23,10 +21,6 @@ async function getProjectsCategory(){
         }
         accumulator[category].push(project);
 
-        // Debug: Log category, accumulator, and project
-        // console.log("Category:", category);
-        // console.log("Accumulator:", accumulator);
-        // console.log("Project:", project);
         return accumulator;
 
     }, {});

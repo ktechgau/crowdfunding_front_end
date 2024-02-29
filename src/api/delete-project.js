@@ -15,7 +15,8 @@ async function deleteProject(projectId) {
     if (!response.ok){
     
             throw new Error(fallbackError)
-        };
+        }
+        return true;
 
     
     }

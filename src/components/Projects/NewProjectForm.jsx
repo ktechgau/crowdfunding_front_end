@@ -43,7 +43,7 @@ function NewProjectForm (){
      return(
         <>
         <section className="form-container">
-    <form onSubmit={handleSubmit}>
+    <form >
        
         <div>
             <label htmlFor="title">Title </label>
@@ -105,7 +105,7 @@ function NewProjectForm (){
     </form>
     </section>
     <section className="cta-button" id="cta-button">
-    <button className="link" type="submit" >Create a Page</button>
+    <button className="link" type="submit"onClick={handleSubmit} >Create a Page</button>
     </section>
 
    

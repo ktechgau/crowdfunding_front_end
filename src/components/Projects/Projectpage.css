@@ -79,3 +79,13 @@ border:none;
 outline:none;
 background-color: transparent;
 }
+
+.featureButtons{
+    display: flex;
+    justify-content: center;
+}
+
+.featureButtons2{
+    display: block;
+    justify-content: center;
+}

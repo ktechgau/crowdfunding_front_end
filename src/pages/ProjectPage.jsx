@@ -8,6 +8,7 @@ import { useAuth } from "../hooks/use-auth.js";
 import { useState } from "react";
 import putProject from "../api/put-project.js";
 import UpdateProjectForm from "../components/Projects/UpdateProjectForm.jsx"
+import DeleteConfirmationPage from "../components/Projects/DeleteConfirmationPage.jsx";
 
 function ProjectPage(){
     const { id } = useParams();
@@ -45,9 +46,11 @@ function ProjectPage(){
 
     const handleDelete = async () =>{
         try{
-            await deleteProject(projectData.project.id);
+            const isDeleted = await deleteProject(projectData.project.id);
+            if (isDeleted){
             setShowDeleted(true);  
-        
+            }
+        console.log("show deeted", showDeleted);
     } catch (error){
             console.error ("error deleting project", error);
         }
@@ -80,15 +83,16 @@ function ProjectPage(){
                 <p className="text"> {projectData.project.description}</p>
                 <div className="divide">
                 
-                {/* Form only appears if user is owner of project and is logged in*/} 
+                
                 
                 
                 {isOwner && (
                     <>
+                    <section className="featureButtons">
                     <div>
                         {/*Update project*/}
                         {!isUpdated ? (
-                        <button onClick={handleUpdate}>Update Project</button>)
+                        <button className="cta-button" onClick={handleUpdate}>Update</button>)
                         :(
                             <>
                            
@@ -97,32 +101,37 @@ function ProjectPage(){
                         </>
                         )}
                     </div>
-                    <div>
+                    <section className="featureButtons2">
                         {/* Confirm delete button*/}
                         {!isDeleteProject ? (
-                            <button onClick={() => setDeleteProject(true)}>Delete Project</button>)
+                            
+                            <button className="cta-button" onClick={() => setDeleteProject(true)}>Delete</button>)
                             : (
+                                
                                 <>
-                                <p> Are you sure you want to delete this page?</p>
-                                <button onClick = {handleDelete}>Yes, delete this page
+                                <div>
+                                <p> Sure?</p>
+                                </div>
+                                <button className="cta-button"onClick = {handleDelete}>Yes
                                 
                                 </button>
-                                <button onClick = {() => setDeleteProject(false)}>No do not delete</button>
+                                <button className="cta-button"onClick = {() => setDeleteProject(false)}>No</button>
                                 </>
                                 
                         )}
-                    </div>
-                   
+                    </section>
+                    </section>
 
                     <div>
                         {/* Delete confirmation */}
-                        {showDeleted && (
-                            <div className="delete">
-                                <p> Your project has been successfully deleted!</p>
-                            <button onClick={() => navigate('/projects')}>
-                                Back to Projects</button>
-                            </div>
-                        )}
+                        {showDeleted && 
+                            <DeleteConfirmationPage />
+                            // <div className="delete">
+                            //     <p> Your project has been successfully deleted!</p>
+                            // <button onClick={() => navigate('/projects')}>
+                            //     Back to Projects</button>
+                            // </div>
+                        }
                     </div>
                     
                     </>

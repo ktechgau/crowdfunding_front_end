@@ -21,15 +21,15 @@ function HomePage(){
    
         return (  
             <>
-            <section className = "search">
+            {/* <section className = "search">
             {auth.token && (
                     <p>{`${"Welcome back, "} ${usersData}`}</p>
-                )}
+                )} 
            
 
            
-            <p>Enter search function here</p>
-            </section>
+            
+            </section>*/}
             <section className="hero">
             <div className="overlay">
             <div className="overlayContainer">

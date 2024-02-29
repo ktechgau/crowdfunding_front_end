@@ -18,18 +18,15 @@ function AllProjectsPage(){
    
     return (
         <>
-        <section className="hero2">
-            <div className="search">
-                <p>Enter search function here</p>
-            </div>
-            <div className="overlay2">
-                <div className="overlayContainer2">
-                    <p className="overlayText2">
+        <section className="hero">
+            <div className="overlay">
+                <div className="overlayContainer">
+                    <p className="overlayText">
                         <span className="italic" id="line1">Help</span>
                     </p>
-                    <p className="overlayText2" id="line2">Someone</p>
-                    <p className="overlayText2" id="line3"><span className="italic">Reach</span></p>
-                    <p className="overlayText2" id="line4">Their Goal</p>
+                    <p className="overlayText" id="line2">Someone</p>
+                    <p className="overlayText" id="line3"><span className="italic">Reach</span></p>
+                    <p className="overlayText" id="line4">Their Goal</p>
                     <p className="overlayText">
                         <a href="#form">
                         <img className="arrow" src={arrow}/>
@@ -38,8 +35,8 @@ function AllProjectsPage(){
                         
                 </div>
             </div>
-            <div className="projectHero">
-                <img className="lightImg" src={light} alt="image of a lightbulb with a graduation hat on it" />
+            <div className="heroImg">
+                <img className="heroVid" src={light} alt="image of a lightbulb with a graduation hat on it" />
             </div>
         </section>
 
@@ -55,12 +52,7 @@ function AllProjectsPage(){
                    
                     <h2>{categoryName}</h2>
                 </Link>
-           
-            {/*<CategoryProjects 
-            // categoryName={categoryName}
-            // groupedProjects={groupedProjects}
-            // key={categoryName}
-            // /> */}
+          
             </div>
         ))}
         

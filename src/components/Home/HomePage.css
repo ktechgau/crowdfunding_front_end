@@ -2,11 +2,14 @@
 
 
 .hero{
+    margin-top:50px;
    position: relative;
    overflow: hidden; /*ensures the vid stays within the boundaries*/
 }
 
 .heroImg{
+    margin-top:50px;
+    margin-bottom:50px;
     width: 100%;
     height: auto;
 }
@@ -44,7 +47,8 @@
 }
 
 .overlayText{
-    line-height: 1.25;
+    margin-top:30px;
+    line-height: 1;
     color: var(--white);
     font-family: var(--heading);
     font-weight:lighter;
@@ -97,13 +101,14 @@
 }
 
 .featureProjects{
-    margin: 50px auto;
+    margin: 50px 10px;
     position:relative;
     width: auto;
     height:auto;
-    padding: 20px;
+    padding: 30px;
     border-style: none;
     background: var(--blue);
+    border-radius:15px;
 }
 
 .headingText{

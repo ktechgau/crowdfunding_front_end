@@ -39,7 +39,7 @@ function ProjectPage(){
     const userId = auth.userId;
     const isOwner = owner === userId;
     
-    // console.log('isOwner',isOwner)
+    console.log('isOwner',isOwner)
     // console.log("username:", userToken);
     // console.log("owner:", owner);
     // console.log("userid:", userId);
@@ -57,10 +57,11 @@ function ProjectPage(){
     };
 
     const handleUpdate = async () =>{
+        
         try{
-            await putProject(projectData.project.id, projectData);
+            await putProject(projectData.project.id);
             setIsUpdated(true);
-
+            console.log("isUpdated:", isUpdated);
         } catch(error){
             console.error ("error updating project", error);
         }
@@ -94,7 +95,7 @@ function ProjectPage(){
                         {!isUpdated ? (
                         <button className="cta-button" onClick={handleUpdate}>Update</button>)
                         :(
-                            <>
+                           <>
                            
                       <UpdateProjectForm />
 

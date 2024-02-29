@@ -1,15 +1,16 @@
-import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
+import { useParams} from "react-router-dom"; //useParams is a hook from react router dom
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
-//import deleteProject from "../api/delete-project.js";
+import deleteProject from "../api/delete-project.js";
 import { useAuth } from "../hooks/use-auth.js";
+import { useState } from "react";
 
 function ProjectPage(){
     const { id } = useParams();
     const {auth} = useAuth();   
    
-    //const [isDeleteProject, setDeleteProject] = useState(false);
+    const [isDeleteProject, setDeleteProject] = useState(false);
     const { projectData, isLoading, error } = useProject(id);
     
 
@@ -37,14 +38,14 @@ function ProjectPage(){
     console.log("owner:", owner);
     console.log("userid:", userId);
 
-    // const handleDelete = async () =>{
-    //     try{
-    //         await deleteProject(projectData.project);
-    //     // later add a redirect to a delete confirmaton page
-    //     } catch (error){
-    //         console.error ("error deleting project", error);
-    //     }
-    // };
+    const handleDelete = async () =>{
+        try{
+            await deleteProject(projectData.project);
+        // later add a redirect to a delete confirmaton page
+        } catch (error){
+            console.error ("error deleting project", error);
+        }
+    };
 
 
     return (
@@ -64,6 +65,8 @@ function ProjectPage(){
                 <div className="divide">
                 
                 {/* Form only appears if user is owner of project and is logged in*/} 
+                
+                
                 {isOwner && (
                     <div>
                         {/* Confirm delete button*/}

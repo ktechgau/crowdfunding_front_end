@@ -1,5 +1,5 @@
-async function deleteProject(project) {
-    const url =`${import.meta.env.VITE_API_URL}/projects/`;
+async function deleteProject(projectId) {
+    const url =`${import.meta.env.VITE_API_URL}/projects/${projectId}`;
     const token=`Token ${window.localStorage.getItem("token")}`;
     
 
@@ -9,22 +9,15 @@ async function deleteProject(project) {
         "Content-Type": "application/json",    
        "Authorization": token,
        
-    },
-    body: JSON.stringify({
-        ...project,
-       
-    }),
-    
-});
-    if (!response.ok){
-        const fallbackError = "Error creating a new page";
-        const data = await response.json().catch(() => {
-            throw new Error(fallbackError)
-        });
 
-        const errorMessage = data?.detail??fallbackError;
-        throw new Error(errorMessage);
+    
+}});
+    if (!response.ok){
+    
+            throw new Error(fallbackError)
+        };
+
+    
     }
-    return await response.json();
-}   
+       
 export default deleteProject;

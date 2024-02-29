@@ -6,11 +6,14 @@ import PledgeForm from "../components/Pledges/PledgeForm.jsx";
 import deleteProject from "../api/delete-project.js";
 import { useAuth } from "../hooks/use-auth.js";
 import { useState } from "react";
+import putProject from "../api/put-project.js";
+import UpdateProjectForm from "../components/Projects/UpdateProjectForm.jsx"
 
 function ProjectPage(){
     const { id } = useParams();
     const {auth} = useAuth();   
     const [isDeleteProject, setDeleteProject] = useState(false);
+    const [isUpdated, setIsUpdated] = useState(false);
     const [showDeleted, setShowDeleted] = useState(false);
     const { projectData, isLoading, error } = useProject(id);
     const navigate = useNavigate();
@@ -35,10 +38,10 @@ function ProjectPage(){
     const userId = auth.userId;
     const isOwner = owner === userId;
     
-    console.log('isOwner',isOwner)
-    console.log("username:", userToken);
-    console.log("owner:", owner);
-    console.log("userid:", userId);
+    // console.log('isOwner',isOwner)
+    // console.log("username:", userToken);
+    // console.log("owner:", owner);
+    // console.log("userid:", userId);
 
     const handleDelete = async () =>{
         try{
@@ -50,6 +53,15 @@ function ProjectPage(){
         }
     };
 
+    const handleUpdate = async () =>{
+        try{
+            await putProject(projectData.project.id, projectData);
+            setIsUpdated(true);
+
+        } catch(error){
+            console.error ("error updating project", error);
+        }
+    }
 
     return (
         <>
@@ -72,6 +84,19 @@ function ProjectPage(){
                 
                 
                 {isOwner && (
+                    <>
+                    <div>
+                        {/*Update project*/}
+                        {!isUpdated ? (
+                        <button onClick={handleUpdate}>Update Project</button>)
+                        :(
+                            <>
+                           
+                      <UpdateProjectForm />
+
+                        </>
+                        )}
+                    </div>
                     <div>
                         {/* Confirm delete button*/}
                         {!isDeleteProject ? (
@@ -87,7 +112,7 @@ function ProjectPage(){
                                 
                         )}
                     </div>
-                    )};
+                   
 
                     <div>
                         {/* Delete confirmation */}
@@ -99,7 +124,12 @@ function ProjectPage(){
                             </div>
                         )}
                     </div>
-                
+                    
+                    </>
+                    )};
+                </div>
+
+                <div>
                 <p className="text-category">Would you like to support this goal?</p>
                 <PledgeForm projectId={projectData.project.id}/>    
                 </div>

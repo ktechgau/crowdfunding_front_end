@@ -1,16 +1,16 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 function SubCategoryList(props) {
    const {groupedProjects}=props;
+    const {categoryName} =useParams();
 console.log("categoryKeys:", Object.keys(groupedProjects));
 
-    const categoryKeys = Object.keys(groupedProjects);
+   
     return (
         <div className="subcategoryPage">
-            {categoryKeys.map(categoryName => (
-                <div key={categoryName}>
-         
-            <h2>{categoryName}</h2>
+          
+           
             <ul>
                 {groupedProjects[categoryName].map(project => (
                     <li key={project.id}>
@@ -21,9 +21,9 @@ console.log("categoryKeys:", Object.keys(groupedProjects));
                 ))}
             </ul>
             </div>
-               ))}
-        </div>
-    );
+               
+        
+        );
 }
 
 export default SubCategoryList;

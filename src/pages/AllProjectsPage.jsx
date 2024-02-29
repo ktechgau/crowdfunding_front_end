@@ -1,7 +1,7 @@
 import useProjectCategory from "../hooks/use-project-category.js";
 import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
-import "../components/Projects/AllprojectsPage.css";
+import "../components/Projects/AllProjectsPage.css"
 import { Link } from "react-router-dom";
 
 function AllProjectsPage(){

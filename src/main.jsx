@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import AllProjectsPage from './pages/AllProjectsPage.jsx';
 import NewProjectPage from './pages/NewProjectPage.jsx';
 import SubCategoryPage from './pages/SubCategoryPage.jsx';
+import DeleteConfirmationPage from './components/Projects/DeleteConfirmationPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     {path:"/login", element: <LoginPage />},
     {path:"/project/:id", element:<ProjectPage/>},
     {path:"/projects/:categoryName", element:<SubCategoryPage/>},
-   
+    {path: "/deleted", element:<DeleteConfirmationPage/>}
   ],
 },
 ]);

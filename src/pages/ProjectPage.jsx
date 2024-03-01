@@ -48,6 +48,7 @@ function ProjectPage(){
         try{
             const isDeleted = await deleteProject(projectData.project.id);
             if (isDeleted){
+            navigate("/deleted");
             setShowDeleted(true);  
             }
         console.log("show deeted", showDeleted);
@@ -128,8 +129,8 @@ function ProjectPage(){
                     </section>
                     </section>
 
-                    <div>
-                        {/* Delete confirmation */}
+                    {/* <div>
+                        {/* Delete confirmation 
                         {showDeleted && 
                             <DeleteConfirmationPage />
                             // <div className="delete">
@@ -138,7 +139,7 @@ function ProjectPage(){
                             //     Back to Projects</button>
                             // </div>
                         }
-                    </div>
+                    </div> */}
                     
                     </>
                     )}

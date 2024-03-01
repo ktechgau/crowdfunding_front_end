@@ -96,9 +96,9 @@ function ProjectPage(){
                         <button className="cta-button" onClick={handleUpdate}>Update</button>)
                         :(
                            <>
-                           
+                       <div className update-project-form >
                       <UpdateProjectForm />
-
+                      </div> 
                         </>
                         )}
                     </div>

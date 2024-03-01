@@ -89,3 +89,7 @@ background-color: transparent;
     display: block;
     justify-content: center;
 }
+
+.update-project-form{
+    margin: 100px auto;
+}

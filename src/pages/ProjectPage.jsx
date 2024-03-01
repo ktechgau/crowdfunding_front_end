@@ -75,20 +75,20 @@ function ProjectPage(){
             <section className="project-details">
                 <section className="project-title">
                 <p className="overlayText-project"><span className="italic" id="line1-project">{projectData.project.title}</span></p>
+                
+                <p className="text-category">Category: {projectData.project.category}</p>
+                <p className="text-category">{`Status: ${projectData.project.is_open}` }</p>
                 </section>
 
                 <section className="project-image">
             <img id="project-image" src={projectData.project.image}/>
             </section>
 
-                <p className="text-category">Category: {projectData.project.category}</p>
-                <p className="text-category">{`Status: ${projectData.project.is_open}` }</p>
             </section>
 
-            <section className="blurb">
+            <section className="blurb2">
                 <p className="text"> {projectData.project.description}</p>
                 <div className="divide">
-                
                 
                 
                 
@@ -141,12 +141,12 @@ function ProjectPage(){
                     </div>
                     
                     </>
-                    )};
+                    )}
                 </div>
 
                 <div>
                 <p className="text-category">Would you like to support this goal?</p>
-                <PledgeForm projectId={projectData.project.id}/>    
+                <PledgeForm  projectId={projectData.project.id}/>    
                 </div>
 
                 <section className="pledges-project">

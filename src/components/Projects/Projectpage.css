@@ -1,38 +1,39 @@
 @import '../vars.css';
 
 .projectPage{
-    margin:150px auto;
-    background: var(--black);
-   
-}
-.project-details{
+    margin: 0px auto;
     background: var(--grey);
+  
 }
 
 .project-image{
+    display: flex;
+    justify-content: center;
     position: relative;
     overflow: hidden;
-    background: var(--blue);
-    padding: 30px;
+    background: var(--black);
+   align-items: center;
    border-radius: 15px;
    margin:40px 20px;
-  
+
 }
 
 #project-image{
     border-radius: 15px;
     width:100%;
     height: auto;
+    border: 5px solid var(--orange);
 }
 
 .project-title{
-    margin: 0 10px;
+    margin: 80px 10px;
 }
 
 .project-details{
    margin:60px auto;
    background: var(--black);
    color: var(--white);
+   border: black 4px solid;
 }
 
 .divide{
@@ -40,16 +41,30 @@
     margin-top: 20px;
 }
 
+.blurb2{
+    
+    color: var(--orange);
+    background-color: var(--white);
+    border-radius: 15px;
+    margin: 50px auto;
+    width: 80%;
+    padding: 30px;
+    text-align: center;
+   
+}
+
 .overlayText-project{
     text-align: center;
     color: var(--white);
-    
+   
 }
 
 #line1-project{
     font-size: 2.5rem;
     margin-top: 60px;
+   
 }
+
 
 .text-category{
     font-family: var(--heading);
@@ -58,14 +73,24 @@
     font-style: italic;
     margin-top: 10px;
     margin-bottom:20px;
-    /*color: var(--black);*/
+  
 }
+.link2{
+    background: var(--white);
+     text-align: center;
+ border: none;
+     text-decoration: none;
+     color: var(--orange);
+     padding: 0px;
+    text-transform: uppercase;
+ }
 
 .pledges-project{
     padding: 50px;
     background: var(--blue);
     color: var(--white);
     border-radius: 15px;
+  
 }
 
 .single-pledges{
@@ -85,7 +110,7 @@
    
 }
 
-.link{
+.link2{
 border:none;
 outline:none;
 background-color: transparent;
@@ -94,6 +119,7 @@ background-color: transparent;
 .featureButtons{
     display: flex;
     justify-content: center;
+
 }
 
 .featureButtons2{
@@ -110,5 +136,42 @@ background-color: transparent;
   
 .project-image{
     margin: 40px 40px;
+}
+}
+
+@media only screen and (min-width: 1024px){
+.project-image{
+    margin: 0px 200px;
+}
+.blurb2{
+    align-items: center;
+  margin: 0px auto;
+}
+#project-image{
+    margin-bottom: 50px;
+}
+.line1-project{
+    margin-top: 10px;
+}
+.project-details{
+    margin-top: 40px;
+}
+.text-category{
+    margin: 10px 200px;
+}
+.form-container{
+margin: 30px 200px;
+}
+.link2{
+   background: var(--white);
+    text-align: center;
+border: none;
+    text-decoration: none;
+    color: var(--orange);
+    padding: 0px;
+   text-transform: uppercase;
+}
+.pledges-project{
+    margin: 20px 250px;
 }
 }

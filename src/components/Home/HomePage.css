@@ -100,6 +100,7 @@
 }
 
 .cta-button{
+
     padding: 10px;
     text-align: center;
     margin: 50px 30px;
@@ -130,9 +131,9 @@
     position:relative;
     width: auto;
     height:auto;
-    padding: 30px;
+    padding: 5px;
     border-style: none;
-    background: var(--blue);
+    background: var(--orange);
     border-radius:15px;
   
 }
@@ -275,10 +276,13 @@
         padding: 25px;
     }
      .featureProjects{
-        padding: 50px;
-        margin: 50px 90px;
-        padding: 30px;
+       height: auto;
+        margin: 50px 200px;
+      
     } 
+    .features{
+        margin-top:50px;
+    }
     .overlayText2{
         margin:30px 400px;
     }
@@ -295,7 +299,7 @@
 
     } 
 
-    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
         .hero{
             width: 100vw;
             height: 100%;
@@ -317,7 +321,7 @@
         }
 
         .cta-button{
-            margin: 70px 200px;
+            margin: 70px 250px;
             padding: 25px;
         }
          .featureProjects{

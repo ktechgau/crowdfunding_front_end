@@ -35,3 +35,8 @@ outline-color: var(--black);
     color: var(--white);
     border-radius: 15px;
 }
+.link{
+    background-color: transparent;
+    border:none;
+    color: var(--orange);
+}

@@ -79,8 +79,8 @@ function PledgeForm ({projectId}){
        
         </section>
         <section className="cta-button" id="cta-button">
-    <button className="link" type="submit" onClick={handleSubmit}>
-    Make a Pledge</button>
+    <button className="link2" type="submit" onClick={handleSubmit}>
+    Pledge</button>
     </section>
     </form>
     

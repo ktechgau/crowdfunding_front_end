@@ -70,7 +70,7 @@ function HomePage(){
             </section>
 
             <section className="howItWorks">
-                <p className="overlayText"><span className="italic" id="line1">How</span> it works</p>
+                <p className="overlayText2"><span className="italic" id="line1">How</span> it works</p>
                 <div className="blurb">
                     <p className="text">Our platform enables individuals to fund their educational endeavors through personalized crowdfunding campaigns. </p>
                     <p className="text">Users share their goals, receive pledges from supporters, and access funds once their targets are met.</p>
@@ -85,9 +85,9 @@ function HomePage(){
             
             <section className="counterContainer">
                 <div className="totals">
-                    <p id="counterText1"><span className="italic" id="line1">We've helped</span></p>
+                    <p id="counterText1"><span className="italic">We've helped</span></p>
                     <p id="counterText2">{totalUsers}</p>
-                    <p id="counterText3"><span className="italic" id="line1">people raise </span></p>
+                    <p id="counterText3"><span className="italic">people raise </span></p>
                     <p id="counterText2">{totalPledges}</p>
                     
                 </div>

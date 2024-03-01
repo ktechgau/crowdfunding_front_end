@@ -2,6 +2,12 @@
 
 
 .hero{
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     margin-top:50px;
    position: relative;
    overflow: hidden; /*ensures the vid stays within the boundaries*/
@@ -10,14 +16,23 @@
 .heroImg{
     margin-top:50px;
     margin-bottom:50px;
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 .heroVid{
+   
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     object-fit: cover;
-    width: 100%;
-    height: auto;
 }
+
 .search{
     color: var(--white);
     border: 0.5px solid white;
@@ -27,22 +42,25 @@
 
 .overlayContainer{
     margin: 100% 0;
-    
+    width: 100vw;
+    height: 100vh;
+ 
 }
 
 .overlay{
         position: absolute; 
         bottom:0;
-        padding:30px;
+        margin: 0px;
+        padding:10px;
         background: rgb(0, 0, 0);
         background: rgba(0, 0, 0, 0.5); 
         color: var(--white); 
-        width: 100%;
-        height:100%;
+        width: 100vw;
+        height: 100%;
         transition: .5s ease;
         opacity:1;
         color: var(--ivory);
-        text-align: center; 
+       text-align: center;
                      
 }
 
@@ -53,12 +71,12 @@
     font-family: var(--heading);
     font-weight:lighter;
     font-size: 2.5rem;
-    z-index: 1;    
+    z-index: 1;     
 }
 
 .arrow{
    margin-top: 5%;
-    margin-right: 90%;
+    margin-right: 80%;
 }
 
 .italic{
@@ -86,7 +104,7 @@
 .cta-button{
     padding: 10px;
     text-align: center;
-    margin: 50px 30px;;
+    margin: 50px 30px;
     border: solid 1px var(--orange);
     border-radius: 15px;
     text-decoration: none;
@@ -109,7 +127,8 @@
 }
 
 .featureProjects{
-    margin: 50px 10px;
+   
+    margin: 0 auto;
     position:relative;
     width: auto;
     height:auto;
@@ -117,10 +136,13 @@
     border-style: none;
     background: var(--blue);
     border-radius:15px;
+  
 }
 
 .headingText{
-    line-height: 1.25;
+    line-height: 3rem;
+    margin: 20px;
+    text-align: center;
     color: var(--white);
     font-family: var(--heading);
     font-weight:lighter;
@@ -136,8 +158,23 @@
     margin-left:90px;
 }
 
+.random-image{
+    display: flex;
+    justify-content: center;
+}
+
 
 /* How it works section */
+
+.overlayText2{
+    margin:30px auto;
+    line-height: 1;
+    color: var(--white);
+    font-family: var(--heading);
+    font-weight:lighter;
+    font-size: 2.5rem;
+    z-index: 1;     
+}
 
 .howItWorks{
     margin-top: 60px; 
@@ -157,7 +194,7 @@
 .text{
     font-family: var(--text);
     font-weight:bolder;
-    font-size:x-large;
+    font-size:1.5rem;
     padding: 20px 20px;
     line-height: 2rem;
 }
@@ -165,10 +202,12 @@
 /*Counter Section*/
 
 .counterContainer{
-    margin: 50px 10px; 
+    margin: 50px 30px; 
     background: var(--green);
     border-radius:5%;
     padding:5px;
+    display:flex;
+    justify-content: center;
 }
 
 .totals{
@@ -178,6 +217,7 @@
 #counterText1{
     margin-top: 50px;
     color: var(--white);
+    font-size: 3rem;
 }
 
 #counterText2{
@@ -190,8 +230,51 @@
 
 #counterText3{
     color: var(--white);
+    font-size: 3rem;
 }
 
 #counterText4{
     color: var(--white);
 }
+
+/* Media Query*/ 
+
+@media only screen and (min-width: 1280px){
+    .hero, .heroVid{
+        width: 1280px;
+        height: 100vh;
+    }
+        
+    }
+
+    @media only screen and (min-width: 768px){
+        .hero{
+            width: 100vw;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .overlayText{
+            margin-top:-250px;
+            line-height: 20rem;
+            color: var(--white);
+            font-family: var(--heading);
+            font-weight:lighter;
+            font-size: 5rem;
+            z-index: 1;     
+        }
+        .overlay{
+            margin-top:50px;
+        }
+        .cta-button{
+            margin: 70px 200px;
+            padding: 25px;
+        }
+         .featureProjects{
+            margin: 50px 30px;
+            padding: 30px;
+        } 
+        .overlayText2{
+            margin:30px 180px;
+        }
+    
+    }

@@ -4,7 +4,7 @@ import ScrollToAnchor from "../components/ScrollToAnchor";
 import RandomProjectImg from "../components/Projects/RandomProjectSort";
 import useUserTotal from "../hooks/use-user-total";
 import usePledgeTotal from "../hooks/use-pledge-total";
-import hero2 from "../assets/Hero/hero2.mp4";
+import hero3 from "../assets/Hero/hero2.mp4";
 import arrow from "../assets/Hero/arrow.png";
 import useUser from "../hooks/use-user";
 import { useAuth } from "../hooks/use-auth";
@@ -33,14 +33,11 @@ function HomePage(){
             <section className="hero">
             <div className="overlay">
             <div className="overlayContainer">
-            
-            <p className="overlayText">
-                <span className="italic" id="line1">Invest</span> in 
-            </p>
-                <p className="overlayText" id="line2">Knowledge</p>
-                <p className="overlayText" id="line3"><span className="italic">Transform</span></p>
-                <p className="overlayText" id="line4">Lives</p>
-                <p className="overlayText">
+            <p><span className="italic" id="line1">Invest in</span>  </p>
+                <p  id="line2">Knowledge</p>
+                <p  id="line3"><span className="italic">Transform</span></p>
+                <p  id="line4">Lives</p>
+                <p>
                     <Link to="cta-button">
                         <img className="arrow" src={arrow}/>
                     </Link>
@@ -48,14 +45,15 @@ function HomePage(){
             </div>
             </div>
             <div className="heroImg">
-                <video className="heroVid" 
-                src={hero2} type="video/mp4" autoPlay loop />     
+                <video className="heroVid"
+                src={hero3} type="video/mp4" autoPlay loop />     
             </div>
             </section>
 
             <section className="cta-button" id="cta-button">
             <Link className= "link" to="/projects">Help Someone</Link>
             </section>
+            
             
             
             <section className="features">

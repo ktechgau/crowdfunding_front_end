@@ -49,7 +49,7 @@ function AllProjectsPage(){
         <div className="categories-container">
         {Object.keys(groupedProjects).map(categoryName => (
            <div className="category-list" key={categoryName}>
-            <Link className="cta-button" to={`/projects/${categoryName}`}>
+            <Link className="cta-button2" to={`/projects/${categoryName}`}>
                    
                     <h2>{categoryName}</h2>
                 </Link>

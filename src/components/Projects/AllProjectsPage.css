@@ -2,18 +2,53 @@
 
 .categories{
     background-color: lightgray;
-    margin:50px 10px;
+    margin:20px 30px;
 border-radius: 15px;
 }
 
 
 .category-list{
     display: grid;
-    grid-template-columns: 50% 50% 50%;
+    grid-template-columns: 50% 50%;
     column-gap: 10px;
     row-gap: 10px;
     margin: 20px auto;
+    padding: 50px;
+   
+}
+.cta-button2{
+    padding: 10px;
+    text-align: center;
+   
+    border: solid 1px var(--orange);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--orange);
    
 }
 
+.cta-button2:hover{
+    color: var(--white);
+    text-shadow: 0 0 5px #feeaf6, 0 0 15px #feb9e3, 0 0 20px #fe89d0, 0 0 40px #fe58bc, 0 0 60px #fb0098, 0 0 10px #cb007b, 0 0 98px #ff0000;
+}
 
+/* Media Query */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+.categories{
+   margin: 20px 30px;
+}
+.cta-button2{
+    margin: 50px 30px;
+}
+}
+
+@media only screen and (min-width: 1024px){
+
+    .categories{
+        margin: 20px 50px;
+    }
+    .cta-button2{
+        margin: 50px 50px;
+    }
+}

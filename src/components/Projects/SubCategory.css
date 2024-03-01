@@ -1,9 +1,13 @@
-.subcategory{
-background-color: var(--white);
+@import "../vars.css";
+
+.subcategoryPage{
+background-color: var(--black);
+border-radius: 15px;
+padding:30px;
 }
 
 .subcategory1{
-background-color: white;
+background-color: var(--black);
 }
 
 .categories{
@@ -14,7 +18,13 @@ background-color: white;
 
 .categories2{
     background-color: lightgray;
-    margin:50px 10px;
+    margin:30px 10px;
     border-radius: 15px;
     padding: 30px;
+}
+
+/* Media Query */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+
 }

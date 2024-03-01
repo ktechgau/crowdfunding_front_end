@@ -3,7 +3,7 @@
 
 .hero{
     z-index: -1;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display:flex;
     justify-content: center;
@@ -16,35 +16,35 @@
 .heroImg{
     margin-top:50px;
     margin-bottom:50px;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
    
 }
 .heroVid{
-   
+    overflow:hidden;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
     object-fit: cover;
+   
 }
 
-.search{
-    color: var(--white);
-    border: 0.5px solid white;
-    margin: 90px 20px 30px 20px;
-    z-index:0;
+.test{
+    z-index: 2;
 }
 
 .overlayContainer{
-    margin: 100% 0;
+    margin: 500px auto;
     width: 100vw;
     height: 100vh;
- 
+    position: relative;
 }
 
 .overlay{
@@ -55,23 +55,13 @@
         background: rgb(0, 0, 0);
         background: rgba(0, 0, 0, 0.5); 
         color: var(--white); 
-        width: 100vw;
+        width: 100%;
         height: 100%;
         transition: .5s ease;
         opacity:1;
         color: var(--ivory);
        text-align: center;
                      
-}
-
-.overlayText{
-    margin-top:30px;
-    line-height: 1;
-    color: var(--white);
-    font-family: var(--heading);
-    font-weight:lighter;
-    font-size: 2.5rem;
-    z-index: 1;     
 }
 
 .arrow{
@@ -81,6 +71,14 @@
 
 .italic{
     font-style:italic;
+}
+
+#line1, #line2, #line3, #line4{
+    color: var(--white);
+}
+
+#line2, #line4{
+    font-size: 2rem;;
 }
 
 #line1{
@@ -202,7 +200,7 @@
 /*Counter Section*/
 
 .counterContainer{
-    margin: 50px 30px; 
+    margin: 50px auto; 
     background: var(--green);
     border-radius:5%;
     padding:5px;
@@ -239,32 +237,85 @@
 
 /* Media Query*/ 
 
-@media only screen and (min-width: 1280px){
-    .hero, .heroVid{
-        width: 1280px;
-        height: 100vh;
+@media only screen and (min-width: 1024px){
+
+
+    .heroImg{
+
+      height:100vh;
+      width: 50vh;
+     
     }
-        
+     .heroVid{
+      
+        margin: 50px;
+        object-fit:cover;
+        height: 100%;
+        width:70%;
+   
+    }  
+    .overlayContainer{
+        margin: 400px auto;
     }
 
-    @media only screen and (min-width: 768px){
+    .arrow{
+        margin-top: 5px;
+         margin-right: 50%;
+     }
+
+    #line2, #line4{
+        font-size: 3rem;
+    }
+
+    #line1, #line3{
+        font-size: 5rem;
+    }
+    .cta-button{
+        margin: 70px 500px;
+        padding: 25px;
+    }
+     .featureProjects{
+        padding: 50px;
+        margin: 50px 90px;
+        padding: 30px;
+    } 
+    .overlayText2{
+        margin:30px 400px;
+    }
+
+    .blurb{
+        display: flex;
+        justify-content: center;   
+    }
+    .counterContainer{
+       align-items: center;
+       height: 50vh;
+       width: 80vh;
+    }
+
+    } 
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
         .hero{
             width: 100vw;
             height: 100%;
             margin: 0 auto;
         }
-        .overlayText{
-            margin-top:-250px;
-            line-height: 20rem;
-            color: var(--white);
-            font-family: var(--heading);
-            font-weight:lighter;
+        .heroImg{
+            height:100vh;
+        }
+        .overlayContainer{
+            margin: 650px auto;
+        }
+
+        #line2, #line4{
+            font-size: 3rem;
+        }
+
+        #line1, #line3{
             font-size: 5rem;
-            z-index: 1;     
         }
-        .overlay{
-            margin-top:50px;
-        }
+
         .cta-button{
             margin: 70px 200px;
             padding: 25px;
@@ -276,5 +327,10 @@
         .overlayText2{
             margin:30px 180px;
         }
+        .counterContainer{
+            align-items: center;
+            height: 50vh;
+            width: 50vh;
+         }
     
     }

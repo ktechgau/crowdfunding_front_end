@@ -5,6 +5,9 @@
     background: var(--black);
    
 }
+.project-details{
+    background: var(--grey);
+}
 
 .project-image{
     position: relative;
@@ -108,8 +111,4 @@ background-color: transparent;
 .project-image{
     margin: 40px 40px;
 }
-#project-image{
-    
-}
-
 }

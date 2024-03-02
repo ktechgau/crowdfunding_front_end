@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "../Projects/NewProjectForm.css";
 import postProject from "../../api/post-project.js";
-
+import axios 'axios';
 
 function NewProjectForm (){
     const navigate = useNavigate();
@@ -14,10 +14,27 @@ function NewProjectForm (){
         image: '',
         is_open: true,
         date_created: null,
-        //category: ([]), //initialise a new array?
+        category: ' ',
+       
     });
 
-    
+    const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+        // Fetch categories from the backend when the component mounts
+        fetchCategories()
+            .then((response) => {
+                setCategories(response.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching categories:", error);
+                setLoading(false);
+            });
+    }, []);
+
+
     //handles the changes in the form
     const handleChange = (event) => {
         const {id, value} = event.target;
@@ -39,9 +56,14 @@ function NewProjectForm (){
         });
     }
     }
+    console.log("Project Data:", projectData);
+    const {category}=projectData;
 
      return(
         <>
+        {loading ? (
+                <p>Loading categories...</p>
+            ) : (
         <section className="form-container">
     <form >
        
@@ -94,16 +116,22 @@ function NewProjectForm (){
             onChange={handleChange}
             />
         </div>
-        {/* <div>
+         <div>
             <label htmlFor="category">Select a category for your area of study</label>
             <select id="category"
-            onChange={handleChange}>
-            <option key={category} value={category}>{category}</option>
+            onChange={handleChange}
+            value={category}>
+            <option value="">Select a Category</option>
+            {categories.map((category) => (
+                                    <option key={category.id} value={category.name}>{category.name}</option>
+                                ))}
+                
             </select>
-        </div> */}
+        </div> 
        
     </form>
     </section>
+            )}
     <section className="cta-button" id="cta-button">
     <button className="link" type="submit"onClick={handleSubmit} >Create a Page</button>
     </section>

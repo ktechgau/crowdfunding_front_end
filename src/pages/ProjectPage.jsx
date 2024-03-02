@@ -153,7 +153,7 @@ function ProjectPage(){
                             {projectData.project.pledges && projectData.project.pledges.map((pledgeData, key) =>{
                                 return (
                                     <li className="list-pledges" key={key}>
-                                    <p className="text-pledge">{`$${pledgeData.amount}`}</p>
+                                    <p className="text-pledge">${pledgeData.amount}</p>
                                     <p className="text-pledge">{`${pledgeData.comment}`}</p>
                                     </li>                
                                     );

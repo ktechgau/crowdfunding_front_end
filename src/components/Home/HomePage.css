@@ -294,9 +294,10 @@
         justify-content: center;   
     }
     .counterContainer{
-       align-items: center;
+      margin-left: 380px;
        height: 50vh;
        width: 80vh;
+       
     }
 
     } 
@@ -334,7 +335,7 @@
             margin:30px 180px;
         }
         .counterContainer{
-            align-items: center;
+            margin-left: 120px;
             height: 50vh;
             width: 50vh;
          }

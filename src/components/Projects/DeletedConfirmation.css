@@ -1,5 +1,13 @@
 @import "../vars";
 
+.back-to-project{
+    display: flex;
+    justify-content: center;
+    margin: -200px auto;
+    padding: 0px;
+   
+}
+
 /* Media Query */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   
@@ -7,4 +15,5 @@
         margin: 40px 40px;
         object-fit: contain;
     }
+    
     }

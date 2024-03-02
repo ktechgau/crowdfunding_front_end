@@ -59,12 +59,12 @@ function HomePage(){
             <section className="features">
             <p className="headingText"><span className="italic" id="headingline1">Help</span> someone</p>
                 <p className="headingText"><span className="italic" id="headingline2">Achieve</span> goals</p>   
-                <div className="featureProjects">
+                 {/* <div className="featureProjects">  */}
                     <div className="random-image">
                         <RandomProjectImg/>
                     </div>
                 
-                </div>
+                {/* </div> */}
             </section>
 
             <section className="howItWorks">

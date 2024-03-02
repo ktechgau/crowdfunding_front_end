@@ -53,10 +53,10 @@ function ProjectPage(){
         try{
             const isDeleted = await deleteProject(projectData.project.id);
             if (isDeleted){
-                setShowDeleted(true);
+               navigate("/deleted");
 
             }
-        console.log("show deeted", showDeleted);
+       
     } catch (error){
             console.error ("error deleting project", error);
         }

@@ -11,7 +11,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import AllProjectsPage from './pages/AllProjectsPage.jsx';
 import NewProjectPage from './pages/NewProjectPage.jsx';
 import SubCategoryPage from './pages/SubCategoryPage.jsx';
-import DeleteConfirmationPage from './components/Projects/DeleteConfirmationPage.jsx';
+import DeleteConfirmationPage from './pages/DeleteConfirmationPage.jsx';
 
 
 const router = createBrowserRouter([

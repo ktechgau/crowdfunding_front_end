@@ -2,7 +2,7 @@ import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "../Projects/NewProjectForm.css";
 import postProject from "../../api/post-project.js";
-import axios 'axios';
+
 
 function NewProjectForm (){
     const navigate = useNavigate();
@@ -14,25 +14,25 @@ function NewProjectForm (){
         image: '',
         is_open: true,
         date_created: null,
-        category: ' ',
+        //category: ' ',
        
     });
 
-    const [categories, setCategories] = useState([]);
+   // const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
   
-    useEffect(() => {
-        // Fetch categories from the backend when the component mounts
-        fetchCategories()
-            .then((response) => {
-                setCategories(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching categories:", error);
-                setLoading(false);
-            });
-    }, []);
+    // useEffect(() => {
+    //     // Fetch categories from the backend when the component mounts
+    //     fetchCategories()
+    //         .then((response) => {
+    //             setCategories(response.data);
+    //             setLoading(false);
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error fetching categories:", error);
+    //             setLoading(false);
+    //         });
+    // }, []);
 
 
     //handles the changes in the form
@@ -116,7 +116,7 @@ function NewProjectForm (){
             onChange={handleChange}
             />
         </div>
-         <div>
+         {/* <div>
             <label htmlFor="category">Select a category for your area of study</label>
             <select id="category"
             onChange={handleChange}
@@ -127,7 +127,7 @@ function NewProjectForm (){
                                 ))}
                 
             </select>
-        </div> 
+        </div>  */}
        
     </form>
     </section>

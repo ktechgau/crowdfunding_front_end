@@ -13,20 +13,52 @@ OpenDoor is a crowdfunding site that allows people to ask for financial sponsors
 ### Intended Audience/User Stories
 OpenDoor is intended for anyone with a plan to pursue a study path to further their education and for sponsors to aid in gifting funds for that person to reach their goals.
 
-#### Screenshots
+## Features:
+### Homepage -
 
-***<insert screenshot of homepage here>***
-
-***<insert screesnshot of project creation page here>***
-
-***<insert screesnshot of project creation form here>***
-
-***<insert screesnshot of project with pledges here>***
-
-***<insert screesnshot of resulting page when an unauthorized user attempts to edita project here>***
+  
+| Video Autoplay |  Carousel of Projects | Ttl owners Ttl $ raised | 
+|:-----|:--------:|------:|
+| <p align="left"><img src="src/assets/Screenshots/herovid.png" width="200" height="400"></p>| <p align="left"><img src="src/assets/Screenshots/carousel.png" width="200" height="400"></p> | <p align="center"><img src="src/assets/Screenshots/counter.png" width="200" height="200"></p> |
 
 
-##### References and Resources:
+### Category & Project Page -
+
+| Categories of Projects | Pledges with amounts and comments 
+| ------------- | ------------- 
+| <p align="left"><img src="src/assets/Screenshots/category.png" width="200" height="300"></p>  | <p align="left"><img src="src/assets/Screenshots/pledges.png" width="200" height="300"></p>  | 
+
+### Create Page -
+
+| Create a new project form 
+| ------------- 
+| <p align="left"><img src="src/assets/Screenshots/createproject.png" width="200" height="300"></p>  | 
+
+### Login / Sign Up
+
+| Login or Sign up Form 
+| ------------- 
+| <p align="left"><img src="src/assets/Screenshots/login.png" width="200" height="300"></p>  | 
+
+### Permissions
+
+| Delete if authorised |  Are you sure check | Delete confirmation | 
+|:-----|:--------:|------:|
+| <p align="left"><img src="src/assets/Screenshots/delete.png" width="200" height="400"></p>| <p align="left"><img src="src/assets/Screenshots/sure.png" width="200" height="400"></p> | <p align="center"><img src="src/assets/Screenshots/thumbup.png" width="200" height="400"></p> |
+
+
+### WishList:
+* Update feature
+* Custom Error Pages
+* CSS Animations
+* User Profile with edit/delete functionality
+* Edit/Delete Pledges
+* Handle Window Storage deletion
+
+
+
+
+#### References and Resources:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 

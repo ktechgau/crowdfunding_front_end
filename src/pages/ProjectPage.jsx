@@ -1,20 +1,20 @@
-import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
-import { useNavigate } from "react-router-dom";
+//import UpdateProjectForm from "../components/Projects/UpdateProjectForm.jsx"import { useParams } from "react-router-dom"; //useParams is a hook from react router dom
+//import putProject from "../api/put-project.js";
+import { useNavigate, useParams } from "react-router-dom";
 import useProject from "../hooks/use-project.js";
 import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
 import deleteProject from "../api/delete-project.js";
 import { useAuth } from "../hooks/use-auth.js";
 import { useState, useEffect } from "react";
-import putProject from "../api/put-project.js";
-import UpdateProjectForm from "../components/Projects/UpdateProjectForm.jsx"
+
 import DeleteConfirmationPage from "./DeleteConfirmationPage.jsx";
 
 function ProjectPage(){
+    //const [isUpdated, setIsUpdated] = useState(false);
     const { id } = useParams();
     const {auth} = useAuth();   
     const [isDeleteProject, setDeleteProject] = useState(false);
-    const [isUpdated, setIsUpdated] = useState(false);
     const [showDeleted, setShowDeleted] = useState(false);
     const { projectData, isLoading, error } = useProject(id);
     const navigate = useNavigate();
@@ -45,9 +45,7 @@ function ProjectPage(){
     const isOwner = owner === userId;
     
     console.log('isOwner',isOwner)
-    // console.log("username:", userToken);
-    // console.log("owner:", owner);
-    // console.log("userid:", userId);
+
 
     const handleDelete = async () =>{
         try{
@@ -62,19 +60,19 @@ function ProjectPage(){
         }
     };
 
-    const handleUpdate = async () =>{
+    // const handleUpdate = async () =>{
         
-        try{
-            await putProject(projectData.project.id);
-            setIsUpdated(true);
-            console.log("isUpdated:", isUpdated);
-        } catch(error){
-            console.error ("error updating project", error);
-        }
-    }
+    //     try{
+    //         const isUpdated = await putProject(projectData.project.id);
+    //         setIsUpdated(true);
+    //     } catch(error){
+    //         console.error ("error updating project", error);
+    //     }
+    // }
 
     return (
         <>
+        
         {showDeleted ? (
         <DeleteConfirmationPage/>
     ):(
@@ -106,22 +104,22 @@ function ProjectPage(){
                     <section className="featureButtons">
                     
                         {/*Update project*/}
-                        {!isUpdated ? (
-                        <button className="cta-button" onClick={handleUpdate}>Update</button>)
+                        {/* {!isUpdated ? (
+                        <button className="cta-button" onClick={() => {setIsUpdated(true); handleUpdate();}}>Update</button>)
                         :(
                            <>
                        <div className update-project-form >
                       <UpdateProjectForm />
                       </div> 
                         </>
-                        )}
+                        )} */}
                     
                     
                     {/* Confirm delete button*/}
                     {!isDeleteProject ? (
                             
-                            <button className="cta-button" onClick={() => setDeleteProject(true)}>Delete</button>)
-                            : (
+                            <button className="cta-button" onClick={() => setDeleteProject(true)}>Delete</button>
+                           ) : (
                                 
                                 <>
                                 <div>
@@ -137,23 +135,7 @@ function ProjectPage(){
                     
                     </section>
 
-                    {/* <section className="featureButtons2">
-                       
-                        
-                    </section> */}
-                
-
-                    {/* <div>
-                        {/* Delete confirmation 
-                        {showDeleted && 
-                            <DeleteConfirmationPage />
-                            // <div className="delete">
-                            //     <p> Your project has been successfully deleted!</p>
-                            // <button onClick={() => navigate('/projects')}>
-                            //     Back to Projects</button>
-                            // </div>
-                        }
-                    </div> */}
+              
                     
                     </>
                     )}
@@ -171,7 +153,7 @@ function ProjectPage(){
                             {projectData.project.pledges && projectData.project.pledges.map((pledgeData, key) =>{
                                 return (
                                     <li className="list-pledges" key={key}>
-                                    <p className="text-pledge">{`$${pledgeData.amount} from ${pledgeData.supporter}`}</p>
+                                    <p className="text-pledge">{`$${pledgeData.amount}`}</p>
                                     <p className="text-pledge">{`${pledgeData.comment}`}</p>
                                     </li>                
                                     );

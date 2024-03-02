@@ -11,7 +11,7 @@ async function putProject(projectId, projectData) {
        
     },
     body: JSON.stringify({
-        projectData
+       
        
     }),
     

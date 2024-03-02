@@ -176,8 +176,7 @@ border: none;
 }
 }
 .featureButtons, .featureButtons2{
-    display: flex;
-    justify-content: center;
-    margin: 0px 100px;
+  display:inline-block;
+   
 
 }

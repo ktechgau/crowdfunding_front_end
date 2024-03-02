@@ -54,6 +54,8 @@ OpenDoor is intended for anyone with a plan to pursue a study path to further th
 * User Profile with edit/delete functionality
 * Edit/Delete Pledges
 * Handle Window Storage deletion
+* Category drop down (get data from API backend) for project option 
+* "$" sign in pledge counter 
 
 
 

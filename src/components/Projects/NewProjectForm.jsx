@@ -61,9 +61,7 @@ function NewProjectForm (){
 
      return(
         <>
-        {loading ? (
-                <p>Loading categories...</p>
-            ) : (
+       
         <section className="form-container">
     <form >
        
@@ -131,7 +129,7 @@ function NewProjectForm (){
        
     </form>
     </section>
-            )}
+        
     <section className="cta-button" id="cta-button">
     <button className="link" type="submit"onClick={handleSubmit} >Create a Page</button>
     </section>

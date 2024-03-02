@@ -6,11 +6,9 @@ import postPledge from "../../api/post-pledge.js";
 
 function PledgeForm ({projectId}){
     const navigate = useNavigate();
-    
-    
-
+    const [pledgeSuccess, setPledgeSuccess] = useState(false);
     const [pledgeData, setPledgeData] = useState ({
-        amount: null,
+        amount: " ",
         comment: " ",
         anonymous: false,
         project: projectId,
@@ -28,19 +26,21 @@ function PledgeForm ({projectId}){
     };
 
     //handles the form submission
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        if (projectId && pledgeData.amount) {
-        postPledge(
-            pledgeData,
-            
-        )
-        .then((response) => {
-           
-            navigate(`/project/${projectId}`);
-        });
-    }
-    }
+    const handleSubmit = async () => {
+        try {
+          // Call API to post pledge with pledgeDetails
+          await postPledge(pledgeData);
+          setPledgeSuccess(true); // Set pledge success to true to display thank you message
+          setPledgeData({ // Reset form fields after successful pledge
+            amount: '',
+            supporter: '',
+            comment: '',
+          });
+        } catch (error) {
+          console.error('Error submitting pledge:', error);
+        }
+        console.log(setPledgeData,setPledgeSuccess);
+      };
      return(
     <form>
         <section className="form-container">
@@ -82,8 +82,11 @@ function PledgeForm ({projectId}){
     <button className="link2" type="submit" onClick={handleSubmit}>
     Pledge</button>
     </section>
+        {pledgeSuccess && (
+            <p>Thank you for your pledge!</p>            
+        )}
+
     </form>
-    
     );
 }
 export default PledgeForm;

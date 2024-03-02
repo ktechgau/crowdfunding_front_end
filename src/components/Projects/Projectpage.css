@@ -123,7 +123,7 @@ background-color: transparent;
 }
 
 .featureButtons2{
-    display: block;
+    display: flex;
     justify-content: center;
 }
 
@@ -174,4 +174,10 @@ border: none;
 .pledges-project{
     margin: 20px 250px;
 }
+}
+.featureButtons, .featureButtons2{
+    display: flex;
+    justify-content: center;
+    margin: 0px 100px;
+
 }

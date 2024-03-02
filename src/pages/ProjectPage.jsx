@@ -5,10 +5,10 @@ import '../components/Projects/Projectpage.css';
 import PledgeForm from "../components/Pledges/PledgeForm.jsx";
 import deleteProject from "../api/delete-project.js";
 import { useAuth } from "../hooks/use-auth.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import putProject from "../api/put-project.js";
 import UpdateProjectForm from "../components/Projects/UpdateProjectForm.jsx"
-import DeleteConfirmationPage from "../components/Projects/DeleteConfirmationPage.jsx";
+import DeleteConfirmationPage from "./DeleteConfirmationPage.jsx";
 
 function ProjectPage(){
     const { id } = useParams();
@@ -19,7 +19,12 @@ function ProjectPage(){
     const { projectData, isLoading, error } = useProject(id);
     const navigate = useNavigate();
     
-
+    useEffect(()=> {
+        if (showDeleted){
+            setDeleteProject(false);
+            setShowDeleted(false);
+        }
+    }, [showDeleted]);
     
     if (isLoading){
         return (<p> loading ...</p>)
@@ -48,8 +53,8 @@ function ProjectPage(){
         try{
             const isDeleted = await deleteProject(projectData.project.id);
             if (isDeleted){
-            navigate("/deleted");
-            setShowDeleted(true);  
+                setShowDeleted(true);
+
             }
         console.log("show deeted", showDeleted);
     } catch (error){
@@ -70,6 +75,9 @@ function ProjectPage(){
 
     return (
         <>
+        {showDeleted ? (
+        <DeleteConfirmationPage/>
+    ):(
         <div className="projectPage">
            
 
@@ -96,7 +104,7 @@ function ProjectPage(){
                 {isOwner && (
                     <>
                     <section className="featureButtons">
-                    <div>
+                    
                         {/*Update project*/}
                         {!isUpdated ? (
                         <button className="cta-button" onClick={handleUpdate}>Update</button>)
@@ -107,10 +115,10 @@ function ProjectPage(){
                       </div> 
                         </>
                         )}
-                    </div>
-                    <section className="featureButtons2">
-                        {/* Confirm delete button*/}
-                        {!isDeleteProject ? (
+                    
+                    
+                    {/* Confirm delete button*/}
+                    {!isDeleteProject ? (
                             
                             <button className="cta-button" onClick={() => setDeleteProject(true)}>Delete</button>)
                             : (
@@ -126,8 +134,14 @@ function ProjectPage(){
                                 </>
                                 
                         )}
+                    
                     </section>
-                    </section>
+
+                    {/* <section className="featureButtons2">
+                       
+                        
+                    </section> */}
+                
 
                     {/* <div>
                         {/* Delete confirmation 
@@ -167,6 +181,7 @@ function ProjectPage(){
                 </section>
             </section> 
         </div>
+    )}
         </>
     );
 

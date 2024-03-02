@@ -1,5 +1,6 @@
-import thumb from "../../assets/Hero/thumb.png";
+import thumb from "../assets/Hero/thumb.png";
 import { useNavigate } from "react-router-dom";
+import "../components/Projects/DeletedConfirmation.css";
 
 function DeleteConfirmationPage () {
     const navigate=useNavigate();

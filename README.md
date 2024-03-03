@@ -79,3 +79,5 @@ https://medium.com/yavar/how-to-use-the-reduce-in-javascript-and-react-4bc8b5f8f
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 
 https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
+
+https://codesandbox.io/p/sandbox/animated-react-js-counter-0uowr?file=%2Fsrc%2FApp.js

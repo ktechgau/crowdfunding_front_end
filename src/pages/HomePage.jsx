@@ -1,6 +1,5 @@
 import {Link, Outlet} from "react-router-dom";
 import "../components/Home/HomePage.css";
-import ScrollToAnchor from "../components/ScrollToAnchor";
 import RandomProjectImg from "../components/Projects/RandomProjectSort";
 import useUserTotal from "../hooks/use-user-total";
 import usePledgeTotal from "../hooks/use-pledge-total";
@@ -8,7 +7,7 @@ import hero3 from "../assets/Hero/hero2.mp4";
 import arrow from "../assets/Hero/arrow.png";
 import useUser from "../hooks/use-user";
 import { useAuth } from "../hooks/use-auth";
-
+import React, {useRef} from 'react';
 
 function HomePage(){
     const {totalUsers} = useUserTotal(); //for getting usertotals
@@ -16,41 +15,45 @@ function HomePage(){
     const {usersData} = useUser();
     const {auth, setAuth} = useAuth();
    
-
+    const helpRef=useRef(null);
+    const handleScroll = (ref) =>{
+        window.scrollTo({
+            top:ref.offsetTop,
+            left:0,
+            behavior:"smooth"
+        })
+    }
    
    
         return (  
             <>
-            {/* <section className = "search">
-            {auth.token && (
-                    <p>{`${"Welcome back, "} ${usersData}`}</p>
-                )} 
            
-
-           
-            
-            </section>*/}
             <section className="hero">
+            
             <div className="overlay">
             <div className="overlayContainer">
             <p><span className="italic" id="line1">Invest in</span>  </p>
                 <p  id="line2">Knowledge</p>
                 <p  id="line3"><span className="italic">Transform</span></p>
                 <p  id="line4">Lives</p>
-                <p>
-                    <Link to="cta-button">
-                        <img className="arrow" src={arrow}/>
-                    </Link>
-                </p>
+               
             </div>
             </div>
+           
             <div className="heroImg">
                 <video className="heroVid"
                 src={hero3} type="video/mp4" autoPlay loop />     
             </div>
+           
             </section>
+            <div>
+                    <Link to="/#cta-button" onClick={() => {handleScroll(aboutRef.current);}}>
+                        <img className="arrow" src={arrow}/>
+                    </Link>
+                </div>
+            
 
-            <section className="cta-button" id="cta-button">
+            <section className="cta-button" id="cta-button" ref={helpRef}>
             <Link className= "link" to="/projects">Help Someone</Link>
             </section>
             
@@ -93,7 +96,7 @@ function HomePage(){
            
 
         <Outlet/>
-        <ScrollToAnchor/>
+     
         
         </>
         )  

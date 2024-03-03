@@ -9,7 +9,7 @@ function AllProjectsPage(){
     const { groupedProjects, isLoading, error } = useProjectCategory();
     
     const handleArrowClick = () => {
-        const targetElement = document.getElementById("project-details2");
+        const targetElement = document.getElementById("project-details");
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop,

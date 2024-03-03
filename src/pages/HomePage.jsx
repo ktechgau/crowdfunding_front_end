@@ -8,6 +8,7 @@ import arrow from "../assets/Hero/arrow.png";
 import useUser from "../hooks/use-user";
 import { useAuth } from "../hooks/use-auth";
 import React, {useRef} from 'react';
+import Counter from "../components/Pledges/CountUp";
 
 function HomePage(){
     const {totalUsers} = useUserTotal(); //for getting usertotals
@@ -87,9 +88,9 @@ function HomePage(){
             <section className="counterContainer">
                 <div className="totals">
                     <p id="counterText1"><span className="italic">We've helped</span></p>
-                    <p id="counterText2">{totalUsers}</p>
-                    <p id="counterText3"><span className="italic">people raise </span></p>
-                    <p id="counterText2">{totalPledges}</p>
+                    <p id="counterText2"><Counter number={totalUsers} title={` People`}></Counter></p>
+                    <p id="counterText3"><span className="italic"> raise </span></p>
+                    <p id="counterText2"><Counter number={totalPledges} title={` dollars`}></Counter></p>
                     
                 </div>
             </section>

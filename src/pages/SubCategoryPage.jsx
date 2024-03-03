@@ -27,6 +27,18 @@ function SubCategoryPage({categoryName}) {
 //     return <p>No projects available for this category.</p>;
 // }
 
+const handleArrowClick = () => {
+    const targetElement = document.getElementById("details3");
+    if (targetElement) {
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+};
+
+
 return(
     <>
 
@@ -42,22 +54,19 @@ return(
                     <p className="overlayText" id="line4">
                     in Need
                     </p>
-                    <p className="overlayText">
-                        <a href="#form">
-                        <img className="arrow" src={arrow}/>
-                        </a>
-                    </p>
-                        
+        
                 </div>
             </div>
             <div className="heroImg">
                 <img className="heroVid" src={door} alt="image of a lightbulb with a graduation hat on it" />
             </div>
         </section>
-
+        <div>
+            <img onClick={handleArrowClick} className="arrow" src={arrow} />
+        </div>
        
 
-    <section className="categories2">
+    <section className="categories2" id="details3">
     <div className="categories-container">
        {Object.keys(groupedProjects).map(categoryName =>
         <SubCategoryList key={categoryName} groupedProjects={groupedProjects}/>

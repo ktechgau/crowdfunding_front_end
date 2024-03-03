@@ -3,22 +3,22 @@ import arrow from "../assets/Hero/arrow.png";
 import light from "../assets/Images/light.png";
 import "../components/Projects/AllProjectsPage.css"
 import { Link } from "react-router-dom";
-import React, {useRef} from 'react';
 
 function AllProjectsPage(){
   
     const { groupedProjects, isLoading, error } = useProjectCategory();
     
-    const categoryRef=useRef(null);
-    console.log("categoryRef:", categoryRef);
-    const handleScroll = (ref) =>{
-        console.log("Scrolling to:", ref);
-        ref.current.scrollTo({
-           block:"start",
-            behavior:"smooth"
-        })
-    }
-
+    const handleArrowClick = () => {
+        const targetElement = document.getElementById("project-details2");
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                left: 0,
+                behavior: "smooth"
+            });
+        }
+    };
+    
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -47,13 +47,12 @@ function AllProjectsPage(){
             </div>
             </section>
             <div>
-                    <Link to="/#project-details" onClick={() => {handleScroll(categoryRef.current);}}>
-                        <img className="arrow" src={arrow}/>
-                    </Link>
-                </div>
+            <img onClick={handleArrowClick} className="arrow" src={arrow} />
+        </div>
+         
        
 
-        <section className="project-details" id="project-details" ref={categoryRef}>
+        <section className="project-details" id="project-details" >
             <p className="text-category">Browse pages by</p>
                 <p className="overlayText-project"><span className="italic" id="line1-project">Category</span></p>
         </section>

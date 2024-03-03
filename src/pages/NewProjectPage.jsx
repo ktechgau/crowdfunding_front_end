@@ -3,7 +3,19 @@ import "../components/Projects/NewProjectPage.css"
 import arrow from "../assets/Hero/arrow.png";
 import help from "../assets/Hero/help.png";
 
+
 function NewProjectPage(){
+    const handleArrowClick = () => {
+        const targetElement = document.getElementById("project-details2");
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                left: 0,
+                behavior: "smooth"
+            });
+        }
+    };
+
     return (
     <>
     <section className="hero">
@@ -14,22 +26,20 @@ function NewProjectPage(){
                     </p>
                     <p className="overlayText" id="line2">Help</p>
                     <p className="overlayText" id="line3"><span className="italic">Reach</span></p>
-                    <p className="overlayText" id="line4">Your Goal</p>
-                    <p className="overlayText">
-                        <a href="#form">
-                        <img className="arrow" src={arrow}/>
-                        </a>
-                    </p>
-                        
+                    <p className="overlayText" id="line4">Your Goal</p>        
                 </div>
             </div>
             <div className="heroImg">
                 <img className="heroVid" src={help} alt="image of a lightbulb with a graduation hat on it" />
             </div>
         </section>
+        <div>
+            <img onClick={handleArrowClick} className="arrow" src={arrow} />
+        </div>
+                   
 
-        <section className="project-details">
-            <p className="text-category">Make your goals a</p>
+        <section className="project-details" id="project-details2">
+            <p className="text-category" id="text-category">Make your goals a</p>
                 <p className="overlayText-project"><span className="italic" id="line1-project">Reality</span></p>
         </section>
 

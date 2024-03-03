@@ -303,6 +303,12 @@
        width: 80vh;
        
     }
+    .arrow{
+        display: flex;
+        justify-content: center;
+       margin:-200px 100px 250px 400px;
+        padding: 0px;
+    }
 
     } 
 
@@ -345,5 +351,11 @@
             height: 50vh;
             width: 50vh;
          }
+         .arrow{
+            display: flex;
+            justify-content: center;
+           margin:-475px 80px 450px 80px;
+            padding: 0px;
+        }
     
     }

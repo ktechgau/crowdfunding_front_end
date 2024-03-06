@@ -31,24 +31,18 @@ function AllProjectsPage(){
     return (
         <>
         <section className="hero">
-            <div className="overlay">
-                <div className="overlayContainer">
-                    <p className="overlayText">
-                        <span className="italic" id="line1">Help</span>
-                    </p>
-                    <p className="overlayText" id="line2">Someone</p>
-                    <p className="overlayText" id="line3"><span className="italic">Reach</span></p>
-                    <p className="overlayText" id="line4">Their Goal</p>
-                           
-                </div>
-            </div>
-            <div className="heroImg">
-                <img className="heroVid" src={light} alt="image of a lightbulb with a graduation hat on it" />
-            </div>
-            </section>
-            <div>
-            <img onClick={handleArrowClick} className="arrow" src={arrow} />
-        </div>
+            <img className="heroVid" 
+            src={light} alt="image of a lightbulb with a graduation hat on it" />
+    
+        <div className="header">
+            <p><span className="italic" id="line1">Help</span></p>
+            <p id="line2">Someone</p>
+            <p  id="line3"><span className="italic">Reach</span></p>
+            <p id="line4">Their Goal</p>
+            <p id="line4"><img onClick={handleArrowClick} className="arrow" src={arrow} /></p>
+        </div>  
+        </section>
+           
          
        
 

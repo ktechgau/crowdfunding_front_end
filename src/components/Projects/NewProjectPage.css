@@ -21,22 +21,18 @@
 }
 
 #line1{
-    margin-left: 15%;
+  
     font-size: 3.5rem;
 }
 
-#line2{
-    margin-left: 35%;  
-}
+
 
 #line3{
-    margin-left:15% ;
+    
     font-size:3.5rem ;
 }
 
-#line4{
-    margin-left: 40%;
-}
+
 
 .form{
     background-color: var(--grey);

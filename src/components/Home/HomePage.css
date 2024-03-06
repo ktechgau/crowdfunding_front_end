@@ -2,73 +2,45 @@
 
 
 .hero{
-    z-index: -1;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:50px;
-   position: relative;
-   overflow: hidden; /*ensures the vid stays within the boundaries*/
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
 }
 
-.heroImg{
-    margin-top:50px;
-    margin-bottom:50px;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-   
-}
 .heroVid{
-    overflow:hidden;
-    width: 100vw;
-    height: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
     object-fit: cover;
-   
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.header{
+    position: relative;
+    color: var(--white);
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
 }
 
 .test{
     z-index: 2;
 }
 
-.overlayContainer{
-    margin: 500px auto;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-.overlay{
-        position: absolute; 
-        bottom:0;
-        margin: 0px;
-        padding:10px;
-        background: rgb(0, 0, 0);
-        background: rgba(0, 0, 0, 0.5); 
-        color: var(--white); 
-        width: 100%;
-        height: 100%;
-        transition: .5s ease;
-        opacity:1;
-        color: var(--ivory);
-       text-align: center;
-                     
-}
 
 .arrow{
     display: flex;
     justify-content: center;
-   margin:-150px auto 0px auto;
-    padding: 0px;
+    margin: 10vh auto;
+    text-align: center;
+    align-items: center;
+    
 }
 
 .italic{
@@ -84,22 +56,18 @@
 }
 
 #line1{
-    margin-left: 15%;
+    
     font-size: 3.5rem;
 }
 
-#line2{
-    margin-left: 35%;  
-}
+
 
 #line3{
-    margin-left:15% ;
+   
     font-size:3.5rem ;
 }
 
-#line4{
-    margin-left: 45%;
-}
+
 
 .cta-button{
 
@@ -114,7 +82,7 @@
 }
 
 .cta-button:hover{
-    color: var(--white);
+    color: var(--orange);
     text-shadow: 0 0 5px #feeaf6, 0 0 15px #feb9e3, 0 0 20px #fe89d0, 0 0 40px #fe58bc, 0 0 60px #fb0098, 0 0 10px #cb007b, 0 0 98px #ff0000;
 }
 
@@ -243,10 +211,10 @@
 
 /* Media Query*/ 
 
-@media only screen and (min-width: 1024px){
+ @media only screen and (min-width: 1024px){
 
 
-    .heroImg{
+    /* .heroImg{
 
       height:auto;
       width: 50vh;
@@ -276,7 +244,7 @@
 
     #line1, #line3{
         font-size: 5rem;
-    }
+    } */
     .cta-button{
         margin: 70px 500px;
         padding: 25px;
@@ -303,17 +271,17 @@
        width: 80vh;
        
     }
-    .arrow{
+    /* .arrow{
         display: flex;
         justify-content: center;
        margin:-200px 100px 250px 400px;
         padding: 0px;
-    }
+    } */
 
     } 
 
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        .hero{
+        /* .hero{
     
             width: 100vw;
             height: 100%;
@@ -333,7 +301,7 @@
 
         #line1, #line3{
             font-size: 5rem;
-        }
+        } */
 
         .cta-button{
             margin: 70px 250px;
@@ -351,11 +319,11 @@
             height: 50vh;
             width: 50vh;
          }
-         .arrow{
+         /* .arrow{
             display: flex;
             justify-content: center;
            margin:-475px 80px 450px 80px;
             padding: 0px;
-        }
+        } */
     
     }

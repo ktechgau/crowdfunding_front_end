@@ -44,26 +44,17 @@ return(
 
 
         <section className="hero">
-            <div className="overlay">
-                <div className="overlayContainer">
-                    <p className="overlayText">
-                        <span className="italic" id="line1">See</span>
-                    </p>
-                    <p className="overlayText" id="line2">who</p>
-                    <p className="overlayText" id="line3"><span className="italic"> is</span></p>
-                    <p className="overlayText" id="line4">
-                    in Need
-                    </p>
-        
-                </div>
-            </div>
-            <div className="heroImg">
-                <img className="heroVid" src={door} alt="image of a lightbulb with a graduation hat on it" />
-            </div>
-        </section>
-        <div>
+            <img className="heroVid" 
+            src={door} alt="image of a lightbulb with a graduation hat on it" />
+        <div className="header">
+            <p><span className="italic" id="line1">See</span></p>
+            <p className="overlayText" id="line2">who</p>
+            <p className="overlayText" id="line3"><span className="italic"> is</span></p>
+            <p className="overlayText" id="line4">in Need</p>
             <img onClick={handleArrowClick} className="arrow" src={arrow} />
         </div>
+        </section>
+        
        
 
     <section className="categories2" id="details3">

@@ -3,7 +3,7 @@ import "../components/Home/HomePage.css";
 import RandomProjectImg from "../components/Projects/RandomProjectSort";
 import useUserTotal from "../hooks/use-user-total";
 import usePledgeTotal from "../hooks/use-pledge-total";
-import hero3 from "../assets/Hero/hero2.mp4";
+import hero4 from "../assets/Hero/hero4.mp4";
 import arrow from "../assets/Hero/arrow.png";
 import useUser from "../hooks/use-user";
 import { useAuth } from "../hooks/use-auth";
@@ -30,28 +30,24 @@ function HomePage(){
             <>
            
             <section className="hero">
+                <video className="heroVid"
+                src={hero4} type="video/mp4" playsinline autoPlay loop poster muted/>     
+               
             
-            <div className="overlay">
-            <div className="overlayContainer">
+           
+            <div className="header">
             <p><span className="italic" id="line1">Invest in</span>  </p>
                 <p  id="line2">Knowledge</p>
                 <p  id="line3"><span className="italic">Transform</span></p>
                 <p  id="line4">Lives</p>
-               
-            </div>
-            </div>
-           
-            <div className="heroImg">
-                <video className="heroVid"
-                src={hero3} type="video/mp4" autoPlay loop />     
-            </div>
-           
-            </section>
-            <div>
-                    <Link to="/#cta-button" onClick={() => {handleScroll(aboutRef.current);}}>
+                <p id="line4"><Link to="/#cta-button" onClick={() => {handleScroll(helpRef.current);}}>
                         <img className="arrow" src={arrow}/>
-                    </Link>
-                </div>
+                </Link></p>
+            </div>
+           </section>
+            
+                    
+               
             
 
             <section className="cta-button" id="cta-button" ref={helpRef}>

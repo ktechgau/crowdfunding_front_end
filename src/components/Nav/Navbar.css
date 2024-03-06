@@ -34,6 +34,8 @@
 
 .link:hover{
     color: var(--orange);
+    color: var(--orange);
+    text-shadow: 0 0 5px #feeaf6, 0 0 15px #feb9e3, 0 0 20px #fe89d0, 0 0 40px #fe58bc, 0 0 60px #fb0098, 0 0 10px #cb007b, 0 0 98px #ff0000;
 }
 
 .logo{

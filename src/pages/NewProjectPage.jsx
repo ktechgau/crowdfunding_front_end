@@ -19,23 +19,17 @@ function NewProjectPage(){
     return (
     <>
     <section className="hero">
-            <div className="overlay">
-                <div className="overlayContainer">
-                    <p className="overlayText">
-                        <span className="italic" id="line1">Ask</span> for
-                    </p>
-                    <p className="overlayText" id="line2">Help</p>
-                    <p className="overlayText" id="line3"><span className="italic">Reach</span></p>
-                    <p className="overlayText" id="line4">Your Goal</p>        
-                </div>
-            </div>
-            <div className="heroImg">
-                <img className="heroVid" src={help} alt="image of a lightbulb with a graduation hat on it" />
-            </div>
-        </section>
-        <div>
-            <img onClick={handleArrowClick} className="arrow" src={arrow} />
-        </div>
+        <img className="heroVid" 
+        src={help} alt="image of a lightbulb with a graduation hat on it" />
+    <div className="header">
+        <p><span className="italic" id="line1">Ask</span> for</p>
+        <p className="overlayText" id="line2">Help</p>
+        <p className="overlayText" id="line3"><span className="italic">Reach</span></p>
+        <p className="overlayText" id="line4">Your Goal</p>        
+        <img onClick={handleArrowClick} className="arrow" src={arrow} />
+    </div>
+    </section>
+            
                    
 
         <section className="project-details" id="project-details2">

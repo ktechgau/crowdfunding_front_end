@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import getProject from "../../api/get-project.js";
 import postPledge from "../../api/post-pledge.js";
 
 
@@ -55,9 +55,14 @@ function PledgeForm ({projectId, updateProjectData}){
                     anonymous: false,
                     project: projectId,
                 });
+
+                //Fetches updated project Data
+                const updatedProject = await getProject(projectId);
+                console.log(updatedProject); // Log the updated project data
                 setTimeout(() => {
                     window.location.reload();
-                }, 3000); // 3000 milliseconds (3 seconds) delay
+                }, 3000);
+           
             } catch (error) {
                 console.error('Error submitting pledge:', error);
             }
@@ -65,30 +70,6 @@ function PledgeForm ({projectId, updateProjectData}){
     };
 
             
-        //     postPledge(
-        //         pledgeData,
-        //     )
-        //     .then ((response) => {
-        //         console.log(response);
-        //         navigate(`/project/${projectId}`);          
-
-        //     });
-        // }
-        // console.log('Pledge button clicked'); 
-        // try {
-        //   // Call API to post pledge with pledgeDetails
-        //   await postPledge(pledgeData);
-        //   setPledgeSuccess(true); // Set pledge success to true to display thank you message
-        //   setPledgeData({ // Reset form fields after successful pledge
-        //     amount: '',
-        //     supporter: '',
-        //     comment: '',
-           
-        //   });
-        // } catch (error) {
-        //   console.error('Error submitting pledge:', error);
-        // }
-   
      return(
     <form>
 
@@ -106,7 +87,7 @@ function PledgeForm ({projectId, updateProjectData}){
             <label htmlFor="comment">Would you like to leave a comment? </label>
             <input type="text" 
             id="comment" 
-            placeholder="Comment..."
+            placeholder="required"
             onChange={handleChange}
             value={pledgeData.comment}
             />

@@ -13,7 +13,7 @@ function PledgeForm ({projectId, updateProjectData}){
         anonymous: false,
         project: projectId,
     });
-
+    const [isLoading, setIsLoading] = useState(false);
     
     //handles the changes in the form
     const handleChange = (event) => {
@@ -28,7 +28,7 @@ function PledgeForm ({projectId, updateProjectData}){
         event.preventDefault();
         if (projectId && pledgeData.amount) {
             try {
-                //checks if ocmment is provided
+                setIsLoading(true);                //checks if ocmment is provided
                 if (pledgeData.comment){
                     //validate comment field
                     if (pledgeData.comment.trim() === ''){
@@ -74,6 +74,8 @@ function PledgeForm ({projectId, updateProjectData}){
     <form>
 
         <section className="form-container">
+            {/* Render loading indicator if data is being loaded */}
+            {isLoading && <p>Loading...</p>}
         <div>
             <label htmlFor="amount">Enter a dollar amount: </label>
             <input id="amount"

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import postPledge from "../../api/post-pledge.js";
 
 
-function PledgeForm ({projectId}){
+function PledgeForm ({projectId, updateProjectData}){
     const navigate = useNavigate();
     const [pledgeSuccess, setPledgeSuccess] = useState(false);
     const [pledgeData, setPledgeData] = useState ({
@@ -12,7 +12,6 @@ function PledgeForm ({projectId}){
         comment: " ",
         anonymous: false,
         project: projectId,
-        
     });
 
     
@@ -25,30 +24,81 @@ function PledgeForm ({projectId}){
         }));
     };
 
-    //handles the form submission
-    const handleSubmit = async () => {
-        try {
-          // Call API to post pledge with pledgeDetails
-          await postPledge(pledgeData);
-          setPledgeSuccess(true); // Set pledge success to true to display thank you message
-          setPledgeData({ // Reset form fields after successful pledge
-            amount: '',
-            supporter: '',
-            comment: '',
-          });
-        } catch (error) {
-          console.error('Error submitting pledge:', error);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (projectId && pledgeData.amount) {
+            try {
+                //checks if ocmment is provided
+                if (pledgeData.comment){
+                    //validate comment field
+                    if (pledgeData.comment.trim() === ''){
+                        throw new Error('Comment field cannot be empty');
+                    }
+                }
+                const response = await postPledge(pledgeData);
+                console.log(response); // Log the response to see the pledge details
+    
+                // Update project data in ProjectPage after successful pledge
+                updateProjectData((prevProjectData) => ({
+                    ...prevProjectData,
+                    project: {
+                        ...prevProjectData.project,
+                        pledges: [...prevProjectData.project.pledges, response], // Add new pledge data to the existing pledges
+                    },
+                }));
+    
+                setPledgeSuccess(true); // Set pledge success to true to display thank you message
+                setPledgeData({ // Reset form fields after successful pledge
+                    amount: '',
+                    supporter: '',
+                    comment: '',
+                    anonymous: false,
+                    project: projectId,
+                });
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000); // 3000 milliseconds (3 seconds) delay
+            } catch (error) {
+                console.error('Error submitting pledge:', error);
+            }
         }
-        console.log(setPledgeData,setPledgeSuccess);
-      };
+    };
+
+            
+        //     postPledge(
+        //         pledgeData,
+        //     )
+        //     .then ((response) => {
+        //         console.log(response);
+        //         navigate(`/project/${projectId}`);          
+
+        //     });
+        // }
+        // console.log('Pledge button clicked'); 
+        // try {
+        //   // Call API to post pledge with pledgeDetails
+        //   await postPledge(pledgeData);
+        //   setPledgeSuccess(true); // Set pledge success to true to display thank you message
+        //   setPledgeData({ // Reset form fields after successful pledge
+        //     amount: '',
+        //     supporter: '',
+        //     comment: '',
+           
+        //   });
+        // } catch (error) {
+        //   console.error('Error submitting pledge:', error);
+        // }
+   
      return(
     <form>
+
         <section className="form-container">
         <div>
             <label htmlFor="amount">Enter a dollar amount: </label>
             <input id="amount"
             type="number"  
             placeholder="$"
+            value={pledgeData.amount}
             onChange={handleChange}
             />
         </div>
@@ -58,6 +108,7 @@ function PledgeForm ({projectId}){
             id="comment" 
             placeholder="Comment..."
             onChange={handleChange}
+            value={pledgeData.comment}
             />
         </div>
         <div>
@@ -82,10 +133,18 @@ function PledgeForm ({projectId}){
     <button className="link2" type="submit" onClick={handleSubmit}>
     Pledge</button>
     </section>
+    
+       
+       
         {pledgeSuccess && (
-            <p>Thank you for your pledge!</p>            
+             <>
+             <h3 className="text-category3">Thank you for your pledge!</h3> 
+             <h3>..this page will refresh soon to show your pledge.</h3>           
+             </>
         )}
-
+       
+       
+        
     </form>
     );
 }

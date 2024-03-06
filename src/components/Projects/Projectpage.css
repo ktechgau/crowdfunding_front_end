@@ -159,6 +159,12 @@ background-color: transparent;
 .text-category{
     margin: 10px 200px;
 }
+.text-category3{
+    margin: 10px 200px;
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+
 .form-container{
 margin: 30px 200px;
 }

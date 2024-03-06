@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import DeleteConfirmationPage from "./DeleteConfirmationPage.jsx";
 
 function ProjectPage(){
-    //const [isUpdated, setIsUpdated] = useState(false);
+    
     const { id } = useParams();
     const {auth} = useAuth();   
     const [isDeleteProject, setDeleteProject] = useState(false);
@@ -59,6 +59,14 @@ function ProjectPage(){
             console.error ("error deleting project", error);
         }
     };
+
+    const updateProjectData = (newProjectData) => {
+       
+    };
+
+    // const handlePledgeSuccess = () => {
+    //     refetch ();
+    // };
 
     // const handleUpdate = async () =>{
         
@@ -143,7 +151,9 @@ function ProjectPage(){
 
                 <div>
                 <p className="text-category">Would you like to support this goal?</p>
-                <PledgeForm  projectId={projectData.project.id}/>    
+                <PledgeForm  projectId={projectData.project.id} updateProjectData={updateProjectData} />
+                {/* // onPledgeSuccess={handlePledgeSuccess} */}
+                   
                 </div>
 
                 <section className="pledges-project">

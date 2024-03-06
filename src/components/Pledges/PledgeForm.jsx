@@ -28,7 +28,8 @@ function PledgeForm ({projectId, updateProjectData}){
         event.preventDefault();
         if (projectId && pledgeData.amount) {
             try {
-                setIsLoading(true);                //checks if ocmment is provided
+                //setIsLoading(true);
+                //checks if ocmment is provided
                 if (pledgeData.comment){
                     //validate comment field
                     if (pledgeData.comment.trim() === ''){
@@ -57,7 +58,7 @@ function PledgeForm ({projectId, updateProjectData}){
                 });
 
                 //Fetches updated project Data
-                const updatedProject = await getProject(projectId);
+                const updatedProject = await getProject(projectId,{ headers: { 'Cache-Control': 'no-cache' } });
                 console.log(updatedProject); // Log the updated project data
                 setTimeout(() => {
                     window.location.reload();

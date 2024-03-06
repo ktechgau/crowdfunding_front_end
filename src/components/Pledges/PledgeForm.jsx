@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import getProject from "../../api/get-project.js";
+import useProject from "../../hooks/use-project.js";
 import postPledge from "../../api/post-pledge.js";
 
 
@@ -8,13 +8,16 @@ function PledgeForm ({projectId, updateProjectData}){
     const navigate = useNavigate();
     const [pledgeSuccess, setPledgeSuccess] = useState(false);
     const [pledgeData, setPledgeData] = useState ({
-        amount: " ",
+        amount: 0,
         comment: " ",
         anonymous: false,
         project: projectId,
     });
     const [isLoading, setIsLoading] = useState(false);
-    
+    const { projectData: updatedProject, isLoading: isUpdating } = useProject(projectId, {
+        headers: { 'Cache-Control': 'no-cache' } // Pass cache-control header
+    });
+
     //handles the changes in the form
     const handleChange = (event) => {
         const {id, value} = event.target;
@@ -28,7 +31,7 @@ function PledgeForm ({projectId, updateProjectData}){
         event.preventDefault();
         if (projectId && pledgeData.amount) {
             try {
-                //setIsLoading(true);
+                setIsLoading(true);
                 //checks if ocmment is provided
                 if (pledgeData.comment){
                     //validate comment field
@@ -58,15 +61,16 @@ function PledgeForm ({projectId, updateProjectData}){
                 });
 
                 //Fetches updated project Data
-                const updatedProject = await getProject(projectId,{ headers: { 'Cache-Control': 'no-cache' } });
-                console.log(updatedProject); // Log the updated project data
+                
+               
                 setTimeout(() => {
                     window.location.reload();
                 }, 4000);
            
             } catch (error) {
                 console.error('Error submitting pledge:', error);
-            }
+            } finally{
+                setIsLoading(false);            }
         }
     };
 

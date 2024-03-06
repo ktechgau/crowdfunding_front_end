@@ -62,7 +62,7 @@ function PledgeForm ({projectId, updateProjectData}){
                 console.log(updatedProject); // Log the updated project data
                 setTimeout(() => {
                     window.location.reload();
-                }, 3000);
+                }, 4000);
            
             } catch (error) {
                 console.error('Error submitting pledge:', error);

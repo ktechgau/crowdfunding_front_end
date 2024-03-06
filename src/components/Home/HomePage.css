@@ -266,42 +266,20 @@
         justify-content: center;   
     }
     .counterContainer{
-      margin-left: 380px;
-       height: 50vh;
+        margin: 0 auto;
+       height: 60vh;
        width: 80vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
        
     }
-    /* .arrow{
-        display: flex;
-        justify-content: center;
-       margin:-200px 100px 250px 400px;
-        padding: 0px;
-    } */
+
 
     } 
 
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        /* .hero{
-    
-            width: 100vw;
-            height: 100%;
-            margin: 0 auto;
-        }
-        .heroImg{
-            max-width: 100%;
-            height:auto;
-        }
-        .overlayContainer{
-            margin: 650px auto;
-        }
-
-        #line2, #line4{
-            font-size: 3rem;
-        }
-
-        #line1, #line3{
-            font-size: 5rem;
-        } */
+       
 
         .cta-button{
             margin: 70px 250px;
@@ -319,11 +297,6 @@
             height: 50vh;
             width: 50vh;
          }
-         /* .arrow{
-            display: flex;
-            justify-content: center;
-           margin:-475px 80px 450px 80px;
-            padding: 0px;
-        } */
+        
     
     }

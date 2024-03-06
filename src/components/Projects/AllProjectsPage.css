@@ -19,7 +19,7 @@ border-radius: 15px;
 .cta-button2{
     padding: 10px;
     text-align: center;
-   
+   margin: 50px auto;
     border: solid 1px var(--orange);
     border-radius: 15px;
     text-decoration: none;
@@ -28,7 +28,8 @@ border-radius: 15px;
 }
 
 .cta-button2:hover{
-    color: var(--white);
+   
+    color: var(--orange);
     text-shadow: 0 0 5px #feeaf6, 0 0 15px #feb9e3, 0 0 20px #fe89d0, 0 0 40px #fe58bc, 0 0 60px #fb0098, 0 0 10px #cb007b, 0 0 98px #ff0000;
 }
 
@@ -38,9 +39,9 @@ border-radius: 15px;
 .categories{
    margin: 20px 30px;
 }
-.cta-button2{
-    margin: 50px 30px;
-}
+/* .cta-button2{
+    margin: 70px 50px;
+} */
 }
 
 @media only screen and (min-width: 1024px){
@@ -48,7 +49,9 @@ border-radius: 15px;
     .categories{
         margin: 20px 50px;
     }
-    .cta-button2{
-        margin: 50px 50px;
-    }
+    /* .cta-button2{
+       
+        margin: 70px 50px;
+        padding: 25px; 
+    }*/
 }

@@ -131,7 +131,7 @@ function NewProjectForm (){
     </section>
         
     <section className="cta-button" id="cta-button">
-    <button className="link" type="submit"onClick={handleSubmit} >Create a Page</button>
+    <button className="link" type="submit"onClick={handleSubmit} >Create</button>
     </section>
 
    
